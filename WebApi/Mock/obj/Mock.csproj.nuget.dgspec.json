@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\1\\Desktop\\project\\WebApi\\Mock\\Mock.csproj": {}
+    "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Mock\\Mock.csproj": {}
   },
   "projects": {
-    "C:\\Users\\1\\Desktop\\project\\WebApi\\Mock\\Mock.csproj": {
+    "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Mock\\Mock.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\1\\Desktop\\project\\WebApi\\Mock\\Mock.csproj",
+        "projectUniqueName": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Mock\\Mock.csproj",
         "projectName": "Mock",
-        "projectPath": "C:\\Users\\1\\Desktop\\project\\WebApi\\Mock\\Mock.csproj",
+        "projectPath": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Mock\\Mock.csproj",
         "packagesPath": "C:\\Users\\1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\1\\Desktop\\project\\WebApi\\Mock\\obj\\",
+        "outputPath": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Mock\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +49,24 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
