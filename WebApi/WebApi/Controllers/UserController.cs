@@ -10,22 +10,23 @@ namespace WebApi.Controllers
     {
         // GET: api/<UserController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<string> Get()//GetAll
         {
-            return new string[] { "value1", "value2" };
+            
         }
 
         // GET api/<UserController>/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return "value";
+            
         }
 
         // POST api/<UserController>
         [HttpPost("{username}/{password}")]
         public IActionResult Post(string username,string password)
         {
+            //אבטחה
             var user = Authenticate(username, password);
             if (user != null)
             {
