@@ -1,28 +1,35 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+//יהיה  מערך שיכיל את הנקודות שבהן יעבור המשתמש
+//יתכנו שינויים במהלך הדרך כאשר המשתמש יסתה מהנתיב שהוכן לו
+//בכל שלב המערך יכיל את הנקודות מהנקודה הנוכית ועד נקודת היעד
+//:הפעולות שיהיו
+//אתחול (1 
+//שליחה לשרת לקבלת מערך נקודות, יקרא גם כאשר המשתמש סתה ומחשבים לו מסלול מחדש
+//2) קידום סמן
+//לכאורה רק אם סתה מהמסלול C# אחרי 3 שניות מעבר הסמן וכן שליחה ל
+//3) הגעת ליעד
+//"כאשר הגענו לנקודה האחרונה -שינוי סמן והשמעת "הגעת ליעד
+
 const initialState = {
-    x: 0,
-    y: 0,
+    arr:[]
 }
 
-export const pointSlice = createSlice({
-  name: 'point',
+export const pointsSlice = createSlice({
+  name: 'points',
   initialState,
   reducers: {
+    //אתחול
     initialization: (state,action) => {
-      state.x = action.payload.x,
-      state.y = action.payload.y
+      //קריאת שרת לקבל את מערך המסלול
+      //יהיה נקודת התחלה ונקודת סיום actionב
+      
     },
-    decrement: (state) => {
-      state.value -= 1
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
-    },
+    
   },
 })
 
 
-export const { initialization, decrement, incrementByAmount } = pointSlice.actions
+export const { initialization,} = pointsSlice.actions
 
-export default pointSlice.reducer
+export default pointsSlice.reducer

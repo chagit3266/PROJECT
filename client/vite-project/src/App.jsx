@@ -1,13 +1,16 @@
 import { useState } from 'react'
 import './App.css'
 import Map from './Components/Map'
+import Login from './Components/features/user/Login' 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-     <Map></Map> 
+     <div className="app-container">
+      <Map />  {/* רכיב המפה */}
+      <Login /> {/* רכיב ה-Login */}
+    </div> 
     </>
   )
 }
