@@ -10,7 +10,18 @@ namespace Repository.Repositories
 {
     public class PointRepository : IRepository<Point>
     {
-        public Task Add(Point item)
+        private readonly IContext _context;
+        public PointRepository(IContext _context)
+        {
+            this._context = _context;
+        }
+
+        public Task<Point> Add(Point item)
+        {
+            
+        }
+
+        public Task<Point> Delete(int id)
         {
             
         }
@@ -19,11 +30,8 @@ namespace Repository.Repositories
         {
             
         }
+
         public Task<Point> GetById(int id)
-        {
-            
-        }
-        public Task Delete(int id)
         {
             
         }

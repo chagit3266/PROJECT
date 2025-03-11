@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mock\Mock.csproj" />
     <ProjectReference Include="..\Service\Service.csproj" />
   </ItemGroup>
 

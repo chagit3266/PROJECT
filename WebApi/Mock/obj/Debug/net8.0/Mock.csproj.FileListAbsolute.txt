@@ -1,0 +1,6 @@
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\obj\Debug\net8.0\Mock.csproj.AssemblyReference.cache
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\obj\Debug\net8.0\Mock.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\obj\Debug\net8.0\Mock.AssemblyInfoInputs.cache
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\obj\Debug\net8.0\Mock.AssemblyInfo.cs
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\obj\Debug\net8.0\Mock.csproj.CoreCompileInputs.cache
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\obj\Debug\net8.0\Mock.sourcelink.json

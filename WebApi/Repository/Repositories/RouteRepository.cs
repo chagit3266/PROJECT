@@ -16,30 +16,29 @@ namespace Repository.Repositories
             this._context = _context;
         }
 
-        public async Task<Route> Add(Route item)
+        public Task<Route> Add(Route item)
         {
-            await _context.Route.AddAsync(item);
-            _context.Save();
-            return item;
+            throw new NotImplementedException();
         }
 
+        public Task<Route> Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
 
         public Task<Route> GetAll()
         {
-            
+            throw new NotImplementedException();
         }
 
         public Task<Route> GetById(int id)
         {
-            
+            throw new NotImplementedException();
         }
-        public Task Delete(int id)
-        {
-           
-        }
+
         public Task<Route> Update(Route item)
         {
-            
+            throw new NotImplementedException();
         }
     }
 }

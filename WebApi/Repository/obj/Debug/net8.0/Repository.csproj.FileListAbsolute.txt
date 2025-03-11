@@ -1,0 +1,6 @@
+C:\Users\1\Desktop\PROJECT\WebApi\Repository\obj\Debug\net8.0\Repository.csproj.AssemblyReference.cache
+C:\Users\1\Desktop\PROJECT\WebApi\Repository\obj\Debug\net8.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\1\Desktop\PROJECT\WebApi\Repository\obj\Debug\net8.0\Repository.AssemblyInfoInputs.cache
+C:\Users\1\Desktop\PROJECT\WebApi\Repository\obj\Debug\net8.0\Repository.AssemblyInfo.cs
+C:\Users\1\Desktop\PROJECT\WebApi\Repository\obj\Debug\net8.0\Repository.csproj.CoreCompileInputs.cache
+C:\Users\1\Desktop\PROJECT\WebApi\Repository\obj\Debug\net8.0\Repository.sourcelink.json

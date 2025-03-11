@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Entities
 {
-    public  class Route
+    public class Route
     {
         [Key]
         public int RouteId { get; set; }

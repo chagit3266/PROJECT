@@ -3163,7 +3163,6 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.Extensions.DependencyInjection >= 8.0.0",
-      "Mock >= 1.0.0",
       "Service >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.6.2"
     ]
@@ -3200,9 +3199,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Mock\\Mock.csproj": {
-              "projectPath": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Mock\\Mock.csproj"
-            },
             "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Service.csproj": {
               "projectPath": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Service.csproj"
             }
@@ -3256,5 +3252,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }

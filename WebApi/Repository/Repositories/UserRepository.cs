@@ -10,6 +10,17 @@ namespace Repository.Repositories
 {
     public class UserRepository : IRepository<User>
     {
+        private readonly IContext _context;
+        public UserRepository(IContext _context)
+        {
+            this._context = _context;
+        }
+
+        public Task<User> Add(User item)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task Delete(int id)
         {
             throw new NotImplementedException();
@@ -25,7 +36,22 @@ namespace Repository.Repositories
             throw new NotImplementedException();
         }
 
+        public Task<User> GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<User> Update(User item)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<User> IRepository<User>.Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<User> IRepository<User>.GetAll()
         {
             throw new NotImplementedException();
         }

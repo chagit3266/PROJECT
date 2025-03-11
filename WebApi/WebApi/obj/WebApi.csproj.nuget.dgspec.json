@@ -316,9 +316,6 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Mock\\Mock.csproj": {
-                "projectPath": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Mock\\Mock.csproj"
-              },
               "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Service.csproj": {
                 "projectPath": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Service.csproj"
               }

@@ -18,6 +18,7 @@ namespace Mock
         public DbSet<User> Users { get; set; }
         public DbSet<Point> Points { get; set; }
         public DbSet<Route> Route { get; set; }
+        public DbSet<UserRoutes> UsersRoutes { get; set; }
         public void Save()
         {
             SaveChangesAsync();
