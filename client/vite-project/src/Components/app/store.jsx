@@ -1,7 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
+import userSlice from '../features/user/userSlice'
+import pointsSlice from '../features/points/pointsSlice'
+
 
 export const store = configureStore({
   reducer: {
-    user:0
+    user:userSlice,
+    points:pointsSlice
   },
 })
