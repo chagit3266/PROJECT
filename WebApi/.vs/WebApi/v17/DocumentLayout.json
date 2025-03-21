@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3C55B55C-2CBB-4B43-AFDE-8E40677246A4}|Mock\\Mock.csproj|c:\\users\\1\\desktop\\project\\webapi\\mock\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C55B55C-2CBB-4B43-AFDE-8E40677246A4}|Mock\\Mock.csproj|solutionrelative:mock\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{295F9193-C316-4B45-8066-E9DD475CFEC9}|Repository\\Repository.csproj|c:\\users\\1\\desktop\\project\\webapi\\repository\\entities\\way.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{295F9193-C316-4B45-8066-E9DD475CFEC9}|Repository\\Repository.csproj|solutionrelative:repository\\entities\\way.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{295F9193-C316-4B45-8066-E9DD475CFEC9}|Repository\\Repository.csproj|c:\\users\\1\\desktop\\project\\webapi\\repository\\interfaces\\icontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{295F9193-C316-4B45-8066-E9DD475CFEC9}|Repository\\Repository.csproj|solutionrelative:repository\\interfaces\\icontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{295F9193-C316-4B45-8066-E9DD475CFEC9}|Repository\\Repository.csproj|c:\\users\\1\\desktop\\project\\webapi\\repository\\repositories\\wayrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{295F9193-C316-4B45-8066-E9DD475CFEC9}|Repository\\Repository.csproj|solutionrelative:repository\\repositories\\wayrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95EB934A-E188-43D4-AEC7-8E241AB831F9}|Service\\Service.csproj|c:\\users\\1\\desktop\\project\\webapi\\service\\services\\algorithmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95EB934A-E188-43D4-AEC7-8E241AB831F9}|Service\\Service.csproj|solutionrelative:service\\services\\algorithmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Database.cs",
-              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Mock\\Database.cs",
-              "RelativeDocumentMoniker": "Mock\\Database.cs",
-              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Mock\\Database.cs",
-              "RelativeToolTip": "Mock\\Database.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
+              "Title": "Way.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Repository\\Entities\\Way.cs",
+              "RelativeDocumentMoniker": "Repository\\Entities\\Way.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Repository\\Entities\\Way.cs",
+              "RelativeToolTip": "Repository\\Entities\\Way.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwA4AAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T18:51:09.985Z",
+              "WhenOpened": "2025-03-21T09:39:25.28Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IContext.cs",
-              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Repository\\Interfaces\\IContext.cs",
-              "RelativeDocumentMoniker": "Repository\\Interfaces\\IContext.cs",
-              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Repository\\Interfaces\\IContext.cs",
-              "RelativeToolTip": "Repository\\Interfaces\\IContext.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwA8AAAAIAAAAAAAAAA==",
+              "Title": "WayRepository.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Repository\\Repositories\\WayRepository.cs",
+              "RelativeDocumentMoniker": "Repository\\Repositories\\WayRepository.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Repository\\Repositories\\WayRepository.cs",
+              "RelativeToolTip": "Repository\\Repositories\\WayRepository.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAkwC8AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-11T18:50:40.354Z",
+              "WhenOpened": "2025-03-21T09:36:25.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AlgorithmService.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Services\\AlgorithmService.cs",
+              "RelativeDocumentMoniker": "Service\\Services\\AlgorithmService.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Services\\AlgorithmService.cs",
+              "RelativeToolTip": "Service\\Services\\AlgorithmService.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAYwDoAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-21T09:30:39.262Z",
               "EditorCaption": ""
             }
           ]

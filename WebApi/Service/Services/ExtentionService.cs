@@ -2,6 +2,7 @@
 using Repository.Entities;
 using Repository.Interfaces;
 using Repository.Repositories;
+using Service.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,11 @@ namespace Service.Services
     {
         public static IServiceCollection AddService(this IServiceCollection service)
         {
-            //service.AddScoped<IService<User>, UserService>();
-            //service.AddScoped<IService<Point>, PointService>();
-            //service.AddScoped<IService<Route>, RouteService>();
-
+            service.AddRepository();
+            service.AddScoped<IService<Node>, PointService>();
+            service.AddScoped<IService<Way>, RouteService>();
+            service.AddScoped<IService<UserRoutes>, UserRoutesService>();
+            //service.AddScoped<IUserService, UserService>();
             return service;
         }
     }

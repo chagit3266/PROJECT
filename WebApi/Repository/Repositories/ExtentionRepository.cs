@@ -14,9 +14,9 @@ namespace Repository.Repositories
         public static IServiceCollection AddRepository(this IServiceCollection service)
         {
             service.AddScoped<IRepository<User>, UserRepository>();
-            service.AddScoped<IRepository<Point>, PointRepository>();
-            service.AddScoped<IRepository<Route>, RouteRepository>();
-
+            service.AddScoped<IRepository<Node>, NodeRepository>();
+            service.AddScoped<IRepository<Way>, WayRepository>();
+            service.AddScoped<IRepository<UserRoutes>, UserRoutesRepository>();
             return service;
         }
     }

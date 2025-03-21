@@ -10,10 +10,10 @@ namespace Repository.Interfaces
     {
        //כאן יופיעו הפעולות שרלונטיות לכל המחלקות
        Task<T> Add(T item);
-       Task<T> GetAll();
+       Task<List<T>> GetAll();
        Task<T> GetById(int id);
        Task<T> Delete(int id);
-       Task<T> Update(T item);
+       Task<T> Update(int id,T item);
 
     }
 }

@@ -4,3 +4,12 @@ C:\Users\1\Desktop\PROJECT\WebApi\Repository\obj\Debug\net8.0\Repository.Assembl
 C:\Users\1\Desktop\PROJECT\WebApi\Repository\obj\Debug\net8.0\Repository.AssemblyInfo.cs
 C:\Users\1\Desktop\PROJECT\WebApi\Repository\obj\Debug\net8.0\Repository.csproj.CoreCompileInputs.cache
 C:\Users\1\Desktop\PROJECT\WebApi\Repository\obj\Debug\net8.0\Repository.sourcelink.json
+C:\Users\1\Desktop\PROJECT\WebApi\Repository\bin\Debug\net8.0\Repository.deps.json
+C:\Users\1\Desktop\PROJECT\WebApi\Repository\bin\Debug\net8.0\Repository.dll
+C:\Users\1\Desktop\PROJECT\WebApi\Repository\bin\Debug\net8.0\Repository.pdb
+C:\Users\1\Desktop\PROJECT\WebApi\Repository\obj\Debug\net8.0\Repository.dll
+C:\Users\1\Desktop\PROJECT\WebApi\Repository\obj\Debug\net8.0\refint\Repository.dll
+C:\Users\1\Desktop\PROJECT\WebApi\Repository\obj\Debug\net8.0\Repository.pdb
+C:\Users\1\Desktop\PROJECT\WebApi\Repository\obj\Debug\net8.0\ref\Repository.dll
+C:\Users\1\Desktop\PROJECT\WebApi\Repository\bin\Debug\net8.0\Repository.runtimeconfig.json
+C:\Users\1\Desktop\PROJECT\WebApi\Repository\obj\Debug\net8.0\Repository.genruntimeconfig.cache

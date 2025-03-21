@@ -10,3 +10,7 @@ C:\Users\1\Desktop\PROJECT\WebApi\Common\obj\Debug\net8.0\Common.dll
 C:\Users\1\Desktop\PROJECT\WebApi\Common\obj\Debug\net8.0\refint\Common.dll
 C:\Users\1\Desktop\PROJECT\WebApi\Common\obj\Debug\net8.0\Common.pdb
 C:\Users\1\Desktop\PROJECT\WebApi\Common\obj\Debug\net8.0\ref\Common.dll
+C:\Users\1\Desktop\PROJECT\WebApi\Common\obj\Debug\net8.0\Common.csproj.AssemblyReference.cache
+C:\Users\1\Desktop\PROJECT\WebApi\Common\bin\Debug\net8.0\Repository.dll
+C:\Users\1\Desktop\PROJECT\WebApi\Common\bin\Debug\net8.0\Repository.pdb
+C:\Users\1\Desktop\PROJECT\WebApi\Common\obj\Debug\net8.0\Common.csproj.Up2Date

@@ -4,3 +4,15 @@ C:\Users\1\Desktop\PROJECT\WebApi\Mock\obj\Debug\net8.0\Mock.AssemblyInfoInputs.
 C:\Users\1\Desktop\PROJECT\WebApi\Mock\obj\Debug\net8.0\Mock.AssemblyInfo.cs
 C:\Users\1\Desktop\PROJECT\WebApi\Mock\obj\Debug\net8.0\Mock.csproj.CoreCompileInputs.cache
 C:\Users\1\Desktop\PROJECT\WebApi\Mock\obj\Debug\net8.0\Mock.sourcelink.json
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\bin\Debug\net8.0\Mock.deps.json
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\bin\Debug\net8.0\Mock.dll
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\bin\Debug\net8.0\Mock.pdb
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\bin\Debug\net8.0\Repository.dll
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\bin\Debug\net8.0\Repository.pdb
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\obj\Debug\net8.0\Mock.csproj.Up2Date
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\obj\Debug\net8.0\Mock.dll
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\obj\Debug\net8.0\refint\Mock.dll
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\obj\Debug\net8.0\Mock.pdb
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\obj\Debug\net8.0\ref\Mock.dll
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\bin\Debug\net8.0\Mock.runtimeconfig.json
+C:\Users\1\Desktop\PROJECT\WebApi\Mock\obj\Debug\net8.0\Mock.genruntimeconfig.cache

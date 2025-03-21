@@ -4,3 +4,15 @@ C:\Users\1\Desktop\PROJECT\WebApi\Service\obj\Debug\net8.0\Service.AssemblyInfoI
 C:\Users\1\Desktop\PROJECT\WebApi\Service\obj\Debug\net8.0\Service.AssemblyInfo.cs
 C:\Users\1\Desktop\PROJECT\WebApi\Service\obj\Debug\net8.0\Service.csproj.CoreCompileInputs.cache
 C:\Users\1\Desktop\PROJECT\WebApi\Service\obj\Debug\net8.0\Service.sourcelink.json
+C:\Users\1\Desktop\PROJECT\WebApi\Service\bin\Debug\net8.0\Service.deps.json
+C:\Users\1\Desktop\PROJECT\WebApi\Service\bin\Debug\net8.0\Service.dll
+C:\Users\1\Desktop\PROJECT\WebApi\Service\bin\Debug\net8.0\Service.pdb
+C:\Users\1\Desktop\PROJECT\WebApi\Service\bin\Debug\net8.0\Common.dll
+C:\Users\1\Desktop\PROJECT\WebApi\Service\bin\Debug\net8.0\Repository.dll
+C:\Users\1\Desktop\PROJECT\WebApi\Service\bin\Debug\net8.0\Common.pdb
+C:\Users\1\Desktop\PROJECT\WebApi\Service\bin\Debug\net8.0\Repository.pdb
+C:\Users\1\Desktop\PROJECT\WebApi\Service\obj\Debug\net8.0\Service.csproj.Up2Date
+C:\Users\1\Desktop\PROJECT\WebApi\Service\obj\Debug\net8.0\Service.dll
+C:\Users\1\Desktop\PROJECT\WebApi\Service\obj\Debug\net8.0\refint\Service.dll
+C:\Users\1\Desktop\PROJECT\WebApi\Service\obj\Debug\net8.0\Service.pdb
+C:\Users\1\Desktop\PROJECT\WebApi\Service\obj\Debug\net8.0\ref\Service.dll

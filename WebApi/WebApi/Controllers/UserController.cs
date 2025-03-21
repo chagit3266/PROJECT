@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Repository.Entities;
+using Service.Interfaces;
+using WebApi.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,51 +11,57 @@ namespace WebApi.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        private readonly IUserService _service;
+        public UserController(IUserService service)
+        {
+            _service = service;
+        }
         // GET: api/<UserController>
         [HttpGet]
-        public IEnumerable<string> Get()//GetAll
+        public Task<List<User>> Get()//GetAll
         {
-            
+            return _service.GetAll();
         }
 
         // GET api/<UserController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Task<User> Get(int id)
         {
-            
+            return _service.GetById(id);
         }
 
         // POST api/<UserController>
-        [HttpPost("{username}/{password}")]
-        public IActionResult Post(string username,string password)
+        [HttpPost("login")]
+        public async Task<IActionResult> Post(UserLogin userLogin)
         {
             //אבטחה
-            var user = Authenticate(username, password);
+            var user =(await _service.Authenticate(userLogin.Email, userLogin.Password));
             if (user != null)
             {
-                var token = Generate(user);
+                var token = await _service.Generate(user);
                 return Ok(token);
             }
-            return BadRequest("");
+            return BadRequest("Invalid email or password.");
 
         }
-
+        //[HttpPost("")]
+        //public async Task<IActionResult> Post(User user)
+        //{
+            
+        //}
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<User> Put(int id, [FromBody] User item)
         {
-
+            return await _service.Update(id,item);
         }
 
         // DELETE api/<UserController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public Task<User> Delete(int id)
         {
+            return _service.Delete(id);
         }
-        private string Generate(User user)
-        {
-            var securityKey = new SymmetricSecurityKey();
-
-        }
+        
     }
 }
