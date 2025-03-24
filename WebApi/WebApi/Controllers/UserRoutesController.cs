@@ -10,21 +10,21 @@ namespace WebApi.Controllers
     [ApiController]
     public class UserRoutesController : ControllerBase
     {
-        private readonly IService<UserRoutes> _service;
-        public UserRoutesController(IService<UserRoutes> service)
+        private readonly IService<UserWay> _service;
+        public UserRoutesController(IService<UserWay> service)
         {
             _service = service;
         }
         // GET: api/<UserRoutesController>
         [HttpGet]
-        public Task<List<UserRoutes>> Get()
+        public Task<List<UserWay>> Get()
         {
             return _service.GetAll();
         }
 
         // GET api/<UserRoutesController>/5
         [HttpGet("{id}")]
-        public Task<UserRoutes> Get(int id)
+        public Task<UserWay> Get(int id)
         {
             return _service.GetById(id);
         }
@@ -43,7 +43,7 @@ namespace WebApi.Controllers
 
         // DELETE api/<UserRoutesController>/5
         [HttpDelete("{id}")]
-        public Task<UserRoutes> Delete(int id)
+        public Task<UserWay> Delete(int id)
         {
             return _service.Delete(id);
         }

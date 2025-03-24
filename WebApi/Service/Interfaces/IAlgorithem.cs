@@ -16,24 +16,24 @@ namespace Service.Interfaces
         //עיבוד נתונים
         
         //צמתים - נקודות
-        public List<Node> ExtractPoint(string jsonResponse);
+        public List<Node> ExtractNodes(string json);
         
         //קשתות - מסלולים
-        public List<Way> ExtractRoutes(string jsonResponse);
+        public List<Way> ExtractWays(string json);
+
+        //החזרת הקשתות והצמתים שנמצאים באזור בין 2 הנקודות 
+        
+        //SQLעיבוד מידע שמור ב
+        
+        //יצירת רשימת סמיכויות
 
         // אלגוריתם דייקסטרה 
 
-
-        // אלגוריתם למציאת מרחק בין 2 נקודות  
+        // אלגוריתם למציאת מרחק בין 2 נקודות
         // 'ע"מ לבדוק אם צריך לשמור נק
-
 
         // בדיקה אם נתיב קיים
 
-
         // שמירת נתיב אם לא קיים
-
-
-        // 
     }
 }

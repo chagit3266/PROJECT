@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Service.Services
 {
-    public class PointService : IService<Node>
+    public class NodeService : IService<Node>
     {
         private readonly IRepository<Node> _repository;
-        public PointService(IRepository<Node> _repository)
+        public NodeService(IRepository<Node> _repository)
         {
             this._repository = _repository;
         }

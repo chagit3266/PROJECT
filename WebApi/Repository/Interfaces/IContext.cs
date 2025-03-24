@@ -13,7 +13,7 @@ namespace Repository.Interfaces
         public DbSet<User> Users { get; set; }
         public DbSet<Node> Nodes { get; set; }
         public DbSet<Way> Ways { get; set; }
-        public DbSet<UserRoutes> UsersRoutes { get; set; }
+        public DbSet<UserWay> UsersWays { get; set; }
         public void Save();
     }
 }

@@ -16,7 +16,7 @@ namespace Repository.Repositories
             service.AddScoped<IRepository<User>, UserRepository>();
             service.AddScoped<IRepository<Node>, NodeRepository>();
             service.AddScoped<IRepository<Way>, WayRepository>();
-            service.AddScoped<IRepository<UserRoutes>, UserRoutesRepository>();
+            service.AddScoped<IRepository<UserWay>, UserWayRepository>();
             return service;
         }
     }

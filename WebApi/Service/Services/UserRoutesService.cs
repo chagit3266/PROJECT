@@ -9,35 +9,35 @@ using System.Threading.Tasks;
 
 namespace Service.Services
 {
-    public class UserRoutesService : IService<UserRoutes>
+    public class UserRoutesService : IService<UserWay>
     {
-        private readonly IRepository<UserRoutes> _repository;
-        public UserRoutesService(IRepository<UserRoutes> _repository)
+        private readonly IRepository<UserWay> _repository;
+        public UserRoutesService(IRepository<UserWay> _repository)
         {
             this._repository = _repository;
         }
-        public async Task<UserRoutes> Add(UserRoutes item)
+        public async Task<UserWay> Add(UserWay item)
         {
             await _repository.Add(item);
             return item;
         }
 
-        public async Task<UserRoutes> Delete(int id)
+        public async Task<UserWay> Delete(int id)
         {
             return await _repository.Delete(id);
         }
 
-        public async Task<List<UserRoutes>> GetAll()
+        public async Task<List<UserWay>> GetAll()
         {
             return await _repository.GetAll();
         }
 
-        public async Task<UserRoutes> GetById(int id)
+        public async Task<UserWay> GetById(int id)
         {
             return await _repository.GetById(id);
         }
 
-        public async Task<UserRoutes> Update(int id,UserRoutes item)
+        public async Task<UserWay> Update(int id,UserWay item)
         {
             return await _repository.Update(id, item);
         }

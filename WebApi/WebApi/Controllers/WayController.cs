@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Repository.Entities;
 using Service.Interfaces;
-using Way = Repository.Entities.Way;
+
 
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -10,10 +10,10 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RouteController : ControllerBase
+    public class WayController : ControllerBase
     {
         private readonly IService<Way> _service;
-        public RouteController(IService<Way> service)
+        public WayController(IService<Way> service)
         {
             _service = service;
         }

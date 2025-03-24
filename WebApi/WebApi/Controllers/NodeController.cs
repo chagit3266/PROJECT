@@ -8,10 +8,10 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PointController : ControllerBase
+    public class NodeController : ControllerBase
     {
         private readonly IService<Node> _service;
-        public PointController(IService<Node> service)
+        public NodeController(IService<Node> service)
         {
             _service = service;
         }

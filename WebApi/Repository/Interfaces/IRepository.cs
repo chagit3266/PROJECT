@@ -14,6 +14,5 @@ namespace Repository.Interfaces
        Task<T> GetById(int id);
        Task<T> Delete(int id);
        Task<T> Update(int id,T item);
-
     }
 }

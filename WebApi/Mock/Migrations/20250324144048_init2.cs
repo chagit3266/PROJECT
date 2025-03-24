@@ -5,23 +5,23 @@
 namespace Mock.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class init2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Points",
+                name: "Nodes",
                 columns: table => new
                 {
-                    PointsId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Lat = table.Column<double>(type: "float", nullable: false),
                     Lon = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Points", x => x.PointsId);
+                    table.PrimaryKey("PK_Nodes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -41,92 +41,70 @@ namespace Mock.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Routes",
+                name: "Ways",
                 columns: table => new
                 {
-                    RouteId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FromPointId = table.Column<int>(type: "int", nullable: false),
-                    ToPointId = table.Column<int>(type: "int", nullable: false)
+                    NodeIds = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HighwayType = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Routes", x => x.RouteId);
-                    table.ForeignKey(
-                        name: "FK_Routes_Points_FromPointId",
-                        column: x => x.FromPointId,
-                        principalTable: "Points",
-                        principalColumn: "PointsId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Routes_Points_ToPointId",
-                        column: x => x.ToPointId,
-                        principalTable: "Points",
-                        principalColumn: "PointsId",
-                        onDelete: ReferentialAction.Cascade);
+                    table.PrimaryKey("PK_Ways", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "UsersRoutes",
+                name: "UsersWays",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    RouteId = table.Column<int>(type: "int", nullable: false),
+                    WayId = table.Column<long>(type: "bigint", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UsersRoutes", x => x.Id);
+                    table.PrimaryKey("PK_UsersWays", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UsersRoutes_Routes_RouteId",
-                        column: x => x.RouteId,
-                        principalTable: "Routes",
-                        principalColumn: "RouteId",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_UsersRoutes_Users_UserId",
+                        name: "FK_UsersWays_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UsersWays_Ways_WayId",
+                        column: x => x.WayId,
+                        principalTable: "Ways",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Routes_FromPointId",
-                table: "Routes",
-                column: "FromPointId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Routes_ToPointId",
-                table: "Routes",
-                column: "ToPointId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UsersRoutes_RouteId",
-                table: "UsersRoutes",
-                column: "RouteId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_UsersRoutes_UserId",
-                table: "UsersRoutes",
+                name: "IX_UsersWays_UserId",
+                table: "UsersWays",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UsersWays_WayId",
+                table: "UsersWays",
+                column: "WayId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "UsersRoutes");
+                name: "Nodes");
 
             migrationBuilder.DropTable(
-                name: "Routes");
+                name: "UsersWays");
 
             migrationBuilder.DropTable(
                 name: "Users");
 
             migrationBuilder.DropTable(
-                name: "Points");
+                name: "Ways");
         }
     }
 }

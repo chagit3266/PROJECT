@@ -8,16 +8,15 @@ using System.Threading.Tasks;
 
 namespace Repository.Entities
 {
-    public class UserRoutes
+    public class UserWay
     {
         [Key]
         public int Id { get; set; }
-        public int RouteId { get; set; }
-        [ForeignKey("RouteId")]
-        public virtual Way Route { get; set; }
+        public long WayId { get; set; }
+        [ForeignKey("WayId")]
+        public virtual Way Way { get; set; }
         public int UserId { get; set; }
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
-
     }
 }

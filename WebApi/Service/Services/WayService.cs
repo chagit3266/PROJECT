@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Service.Services
 {
-    public class RouteService : IService<Way>
+    public class WayService : IService<Way>
     {
         private readonly IRepository<Way> _repository;
-        public RouteService(IRepository<Way> _repository)
+        public WayService(IRepository<Way> _repository)
         {
             this._repository = _repository;
         }

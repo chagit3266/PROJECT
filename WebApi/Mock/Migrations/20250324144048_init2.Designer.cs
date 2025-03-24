@@ -11,8 +11,8 @@ using Mock;
 namespace Mock.Migrations
 {
     [DbContext(typeof(Database))]
-    [Migration("20250318172217_init")]
-    partial class init
+    [Migration("20250324144048_init2")]
+    partial class init2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,13 +24,13 @@ namespace Mock.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Repository.Entities.Point", b =>
+            modelBuilder.Entity("Repository.Entities.Node", b =>
                 {
-                    b.Property<int>("PointsId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PointsId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<double>("Lat")
                         .HasColumnType("float");
@@ -38,32 +38,9 @@ namespace Mock.Migrations
                     b.Property<double>("Lon")
                         .HasColumnType("float");
 
-                    b.HasKey("PointsId");
+                    b.HasKey("Id");
 
-                    b.ToTable("Points");
-                });
-
-            modelBuilder.Entity("Repository.Entities.Route", b =>
-                {
-                    b.Property<int>("RouteId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RouteId"));
-
-                    b.Property<int>("FromPointId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ToPointId")
-                        .HasColumnType("int");
-
-                    b.HasKey("RouteId");
-
-                    b.HasIndex("FromPointId");
-
-                    b.HasIndex("ToPointId");
-
-                    b.ToTable("Routes");
+                    b.ToTable("Nodes");
                 });
 
             modelBuilder.Entity("Repository.Entities.User", b =>
@@ -95,7 +72,7 @@ namespace Mock.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Repository.Entities.UserRoutes", b =>
+            modelBuilder.Entity("Repository.Entities.UserWay", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -103,57 +80,59 @@ namespace Mock.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("RouteId")
-                        .HasColumnType("int");
-
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<long>("WayId")
+                        .HasColumnType("bigint");
 
-                    b.HasIndex("RouteId");
+                    b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UsersRoutes");
+                    b.HasIndex("WayId");
+
+                    b.ToTable("UsersWays");
                 });
 
-            modelBuilder.Entity("Repository.Entities.Route", b =>
+            modelBuilder.Entity("Repository.Entities.Way", b =>
                 {
-                    b.HasOne("Repository.Entities.Point", "FromPoint")
-                        .WithMany()
-                        .HasForeignKey("FromPointId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
 
-                    b.HasOne("Repository.Entities.Point", "ToPoint")
-                        .WithMany()
-                        .HasForeignKey("ToPointId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Navigation("FromPoint");
+                    b.Property<string>("HighwayType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Navigation("ToPoint");
+                    b.Property<string>("NodeIds")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Ways");
                 });
 
-            modelBuilder.Entity("Repository.Entities.UserRoutes", b =>
+            modelBuilder.Entity("Repository.Entities.UserWay", b =>
                 {
-                    b.HasOne("Repository.Entities.Route", "Route")
-                        .WithMany()
-                        .HasForeignKey("RouteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Repository.Entities.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Route");
+                    b.HasOne("Repository.Entities.Way", "Way")
+                        .WithMany()
+                        .HasForeignKey("WayId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
+
+                    b.Navigation("Way");
                 });
 #pragma warning restore 612, 618
         }

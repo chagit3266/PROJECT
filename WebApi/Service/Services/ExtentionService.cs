@@ -16,10 +16,11 @@ namespace Service.Services
         public static IServiceCollection AddService(this IServiceCollection service)
         {
             service.AddRepository();
-            service.AddScoped<IService<Node>, PointService>();
-            service.AddScoped<IService<Way>, RouteService>();
-            service.AddScoped<IService<UserRoutes>, UserRoutesService>();
+            service.AddScoped<IService<Node>, NodeService>();
+            service.AddScoped<IService<Way>, WayService>();
+            service.AddScoped<IService<UserWay>, UserRoutesService>();
             //service.AddScoped<IUserService, UserService>();
+            service.AddScoped<IAlgorithem,AlgorithmService>();
             return service;
         }
     }

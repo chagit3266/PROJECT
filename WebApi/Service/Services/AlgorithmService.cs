@@ -31,43 +31,62 @@ namespace Service.Services
 
             return await response.Content.ReadAsStringAsync();
         }
-
-        public List<Node> ExtractPoint(string jsonResponse)
+        public List<Node> ExtractNodes(string json)
         {
-            var data = JsonSerializer.Deserialize<OsmResponse>(jsonResponse);
-            List<Node> points = new List<Node>();
+            JObject jsonResponse = JObject.Parse(json);
+            List<Node> nodes = new List<Node>();
 
-            foreach (var element in data.elements)
+            foreach (var element in jsonResponse["elements"])
             {
-                if (element.type == "node")
+                if (element["type"].ToString() == "node")
                 {
-                    points.Add(new Node
+                    nodes.Add(new Node
                     {
-                        Id = element.id,
-                        Lat = element.lat,
-                        Lon = element.lon
+                        Lat = (double)element["lat"],
+                        Lon = (double)element["lon"]
                     });
                 }
             }
-            return points;
+            return nodes;
         }
-        public List<Way> ExtractRoutes(string jsonResponse)
+        public List<Way> ExtractWays(string json)
         {
-            var data=JsonSerializer.Deserialize<OsmResponse>(jsonResponse);
-            List <Way> ways = new List<Way>();
-            foreach (var element in data.elements)
+            JObject jsonResponse = JObject.Parse(json);
+            List<Way> ways = new List<Way>();
+            foreach (var element in jsonResponse["elements"])
             {
-                if(element.type == "way")
+                if (element["type"].ToString() == "way")
                 {
                     ways.Add(new Way
                     {
-                        Id= element.id,
-
+                        //NodeIds = (List<long>)element["nodes"],
+                        NodeIds = element["nodes"] != null ? element["nodes"].ToObject<List<long>>() : new List<long>(),
+                        HighwayType = element["tags"] is JObject tags && tags.TryGetValue("highway", out JToken highwayValue)
+                                       ? highwayValue.ToString() : "unknown",
                     });
                 }
             }
             return ways;
         }
-        
+        //public List<Way> ExtractWays(string jsonResponse)
+        //{
+        //    var data=JsonSerializer.Deserialize<OsmResponse>(jsonResponse);
+        //    List <Way> ways = new List<Way>();
+        //    foreach (var element in data.elements)
+        //    {
+        //        if(element.type == "way")
+        //        {
+        //            ways.Add(new Way
+        //            {
+        //                Id= element.id,
+        //                NodeIds = element.nodes,
+        //                HighwayType = element.tags != null && element.tags.ContainsKey("highway") ? element.tags["highway"] : "unknown"
+        //            });
+        //        }
+        //    }
+        //    return ways;
+        //}
+
+
     }
 }
