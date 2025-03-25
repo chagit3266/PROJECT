@@ -21,19 +21,29 @@ namespace Service.Interfaces
         //קשתות - מסלולים
         public List<Way> ExtractWays(string json);
 
-        //החזרת הקשתות והצמתים שנמצאים באזור בין 2 הנקודות 
-        
+        //שנמצאים באזור בין 2 הנקודות SQL-החזרת הקשתות והצמתים מה
+        //לכאורה רק קשתות
+
         //SQLעיבוד מידע שמור ב
-        
+        //SQLאם נחתכת עם קשת מ openstreetmap ופיצול קשתות מ
+
         //יצירת רשימת סמיכויות
+        public Dictionary<long, List<Way>> CreateAdjacencyList(List<Node> nodes, List<Way> ways);
 
         // אלגוריתם דייקסטרה 
+        public List<Node> Dijkstra(Dictionary<long, List<Way>> adjacencyList);
 
         // אלגוריתם למציאת מרחק בין 2 נקודות
         // 'ע"מ לבדוק אם צריך לשמור נק
-
+        // Way וכן כדי לחשב אורך 
+        //ישלח לפונקציה המועמסת כל 2 נקודות ויבצע חיבור בין כל המרחקים
+        public double CalculateDistance(Way way,Dictionary<long, Node> nodes);
+        public double CalculateDistance(Node start, Node end);
+        
         // בדיקה אם נתיב קיים
+        //נבדוק גם בשמורים שאושרו וגם באלו שעדיין לא אושרו ונבדוק אם צריך לשנות לו סטטוס לפעיל
 
         // שמירת נתיב אם לא קיים
+
     }
 }

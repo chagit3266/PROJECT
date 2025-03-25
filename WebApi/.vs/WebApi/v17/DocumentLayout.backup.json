@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Mock\\Migrations\\20250324144048_init2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Mock\\Migrations\\20250324144048_init2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12340F36-4A21-4DB7-84C7-2321E0ED09B0}|WebApi\\WebApi.csproj|c:\\users\\1\\desktop\\project\\webapi\\webapi\\controllers\\waycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12340F36-4A21-4DB7-84C7-2321E0ED09B0}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\waycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{295F9193-C316-4B45-8066-E9DD475CFEC9}|Repository\\Repository.csproj|c:\\users\\1\\desktop\\project\\webapi\\repository\\entities\\userway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{295F9193-C316-4B45-8066-E9DD475CFEC9}|Repository\\Repository.csproj|solutionrelative:repository\\entities\\userway.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{12340F36-4A21-4DB7-84C7-2321E0ED09B0}|WebApi\\WebApi.csproj|c:\\users\\1\\desktop\\project\\webapi\\webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{12340F36-4A21-4DB7-84C7-2321E0ED09B0}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{295F9193-C316-4B45-8066-E9DD475CFEC9}|Repository\\Repository.csproj|c:\\users\\1\\desktop\\project\\webapi\\repository\\entities\\way.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{295F9193-C316-4B45-8066-E9DD475CFEC9}|Repository\\Repository.csproj|solutionrelative:repository\\entities\\way.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{95EB934A-E188-43D4-AEC7-8E241AB831F9}|Service\\Service.csproj|c:\\users\\1\\desktop\\project\\webapi\\service\\services\\algorithmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95EB934A-E188-43D4-AEC7-8E241AB831F9}|Service\\Service.csproj|solutionrelative:service\\services\\algorithmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3C55B55C-2CBB-4B43-AFDE-8E40677246A4}|Mock\\Mock.csproj|c:\\users\\1\\desktop\\project\\webapi\\mock\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3C55B55C-2CBB-4B43-AFDE-8E40677246A4}|Mock\\Mock.csproj|solutionrelative:mock\\database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{95EB934A-E188-43D4-AEC7-8E241AB831F9}|Service\\Service.csproj|c:\\users\\1\\desktop\\project\\webapi\\service\\interfaces\\ialgorithem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95EB934A-E188-43D4-AEC7-8E241AB831F9}|Service\\Service.csproj|solutionrelative:service\\interfaces\\ialgorithem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +31,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20250324144048_init2.cs",
-              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Mock\\Migrations\\20250324144048_init2.cs",
-              "RelativeDocumentMoniker": "Mock\\Migrations\\20250324144048_init2.cs",
-              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Mock\\Migrations\\20250324144048_init2.cs",
-              "RelativeToolTip": "Mock\\Migrations\\20250324144048_init2.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "WayController.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\WebApi\\Controllers\\WayController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\WayController.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\WebApi\\Controllers\\WayController.cs*",
+              "RelativeToolTip": "WebApi\\Controllers\\WayController.cs*",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBcAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T14:40:48.781Z",
+              "WhenOpened": "2025-03-25T21:32:05.84Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserWay.cs",
-              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Repository\\Entities\\UserWay.cs",
-              "RelativeDocumentMoniker": "Repository\\Entities\\UserWay.cs",
-              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Repository\\Entities\\UserWay.cs",
-              "RelativeToolTip": "Repository\\Entities\\UserWay.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwA4AAAAnAAAAAAAAAA==",
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\WebApi\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\WebApi\\Controllers\\UserController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\UserController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAgwDMAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T14:39:50.754Z",
+              "WhenOpened": "2025-03-25T17:45:52.887Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Way.cs",
-              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Repository\\Entities\\Way.cs",
-              "RelativeDocumentMoniker": "Repository\\Entities\\Way.cs",
-              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Repository\\Entities\\Way.cs",
-              "RelativeToolTip": "Repository\\Entities\\Way.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAANAAAAAAAAAA==",
+              "Title": "AlgorithmService.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Services\\AlgorithmService.cs",
+              "RelativeDocumentMoniker": "Service\\Services\\AlgorithmService.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Services\\AlgorithmService.cs",
+              "RelativeToolTip": "Service\\Services\\AlgorithmService.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAADgv0cAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T14:39:21.062Z",
+              "WhenOpened": "2025-03-25T16:35:53.319Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Database.cs",
-              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Mock\\Database.cs",
-              "RelativeDocumentMoniker": "Mock\\Database.cs",
-              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Mock\\Database.cs",
-              "RelativeToolTip": "Mock\\Database.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAowBgAAAAAAAAAAAAAAA==",
+              "Title": "IAlgorithem.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Interfaces\\IAlgorithem.cs",
+              "RelativeDocumentMoniker": "Service\\Interfaces\\IAlgorithem.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Interfaces\\IAlgorithem.cs",
+              "RelativeToolTip": "Service\\Interfaces\\IAlgorithem.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAA7wB0AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T14:38:10.703Z",
+              "WhenOpened": "2025-03-24T17:09:28.79Z",
               "EditorCaption": ""
             }
           ]

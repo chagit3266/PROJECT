@@ -31,7 +31,7 @@ namespace WebApi.Controllers
         }
 
         // POST api/<UserController>
-        [HttpPost("login")]
+        [HttpPost("signIn")]
         public async Task<IActionResult> Post(UserLogin userLogin)
         {
             //אבטחה
@@ -42,13 +42,17 @@ namespace WebApi.Controllers
                 return Ok(token);
             }
             return BadRequest("Invalid email or password.");
-
         }
-        //[HttpPost("")]
-        //public async Task<IActionResult> Post(User user)
-        //{
-            
-        //}
+        [HttpPost("signUp")]
+        public async Task<IActionResult> Post(User user)
+        {
+            if (_service.Authenticate(user.Email, user.Password) == null)
+            {
+                _service.Add(user);
+                return Ok(user);
+            }
+            return BadRequest("User already exists."); //singInבקלינט נשלח אחרי התחברות או אם כבר רשום ל
+        }
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
         public async Task<User> Put(int id, [FromBody] User item)

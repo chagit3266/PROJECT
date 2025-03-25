@@ -5,10 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Point": {
+    "/api/Node": {
       "get": {
         "tags": [
-          "Point"
+          "Node"
         ],
         "responses": {
           "200": {
@@ -18,7 +18,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Point"
+                    "$ref": "#/components/schemas/Node"
                   }
                 }
               },
@@ -26,7 +26,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Point"
+                    "$ref": "#/components/schemas/Node"
                   }
                 }
               },
@@ -34,7 +34,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Point"
+                    "$ref": "#/components/schemas/Node"
                   }
                 }
               }
@@ -44,7 +44,7 @@
       },
       "post": {
         "tags": [
-          "Point"
+          "Node"
         ],
         "requestBody": {
           "content": {
@@ -72,10 +72,10 @@
         }
       }
     },
-    "/api/Point/{id}": {
+    "/api/Node/{id}": {
       "get": {
         "tags": [
-          "Point"
+          "Node"
         ],
         "parameters": [
           {
@@ -94,17 +94,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Point"
+                  "$ref": "#/components/schemas/Node"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Point"
+                  "$ref": "#/components/schemas/Node"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Point"
+                  "$ref": "#/components/schemas/Node"
                 }
               }
             }
@@ -113,7 +113,7 @@
       },
       "put": {
         "tags": [
-          "Point"
+          "Node"
         ],
         "parameters": [
           {
@@ -153,7 +153,7 @@
       },
       "delete": {
         "tags": [
-          "Point"
+          "Node"
         ],
         "parameters": [
           {
@@ -172,183 +172,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Point"
+                  "$ref": "#/components/schemas/Node"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Point"
+                  "$ref": "#/components/schemas/Node"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Point"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/Route": {
-      "get": {
-        "tags": [
-          "Route"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Route"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Route"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Route"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "Route"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Route/{id}": {
-      "get": {
-        "tags": [
-          "Route"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Route"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Route"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Route"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Route"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "string"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "delete": {
-        "tags": [
-          "Route"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/Route"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Route"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Route"
+                  "$ref": "#/components/schemas/Node"
                 }
               }
             }
@@ -529,7 +363,7 @@
         }
       }
     },
-    "/api/User/login": {
+    "/api/User/signIn": {
       "post": {
         "tags": [
           "User"
@@ -560,6 +394,37 @@
         }
       }
     },
+    "/api/User/signUp": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/UserRoutes": {
       "get": {
         "tags": [
@@ -573,7 +438,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/UserRoutes"
+                    "$ref": "#/components/schemas/UserWay"
                   }
                 }
               },
@@ -581,7 +446,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/UserRoutes"
+                    "$ref": "#/components/schemas/UserWay"
                   }
                 }
               },
@@ -589,7 +454,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/UserRoutes"
+                    "$ref": "#/components/schemas/UserWay"
                   }
                 }
               }
@@ -649,17 +514,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserRoutes"
+                  "$ref": "#/components/schemas/UserWay"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserRoutes"
+                  "$ref": "#/components/schemas/UserWay"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserRoutes"
+                  "$ref": "#/components/schemas/UserWay"
                 }
               }
             }
@@ -727,17 +592,183 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserRoutes"
+                  "$ref": "#/components/schemas/UserWay"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserRoutes"
+                  "$ref": "#/components/schemas/UserWay"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserRoutes"
+                  "$ref": "#/components/schemas/UserWay"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Way": {
+      "get": {
+        "tags": [
+          "Way"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Way"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Way"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Way"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Way"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Way/{id}": {
+      "get": {
+        "tags": [
+          "Way"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Way"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Way"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Way"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Way"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Way"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Way"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Way"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Way"
                 }
               }
             }
@@ -787,12 +818,12 @@
   },
   "components": {
     "schemas": {
-      "Point": {
+      "Node": {
         "type": "object",
         "properties": {
-          "pointsId": {
+          "id": {
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           },
           "lat": {
             "type": "number",
@@ -801,30 +832,6 @@
           "lon": {
             "type": "number",
             "format": "double"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Route": {
-        "type": "object",
-        "properties": {
-          "routeId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "fromPointId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "toPointId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "fromPoint": {
-            "$ref": "#/components/schemas/Point"
-          },
-          "toPoint": {
-            "$ref": "#/components/schemas/Point"
           }
         },
         "additionalProperties": false
@@ -869,19 +876,19 @@
         },
         "additionalProperties": false
       },
-      "UserRoutes": {
+      "UserWay": {
         "type": "object",
         "properties": {
           "id": {
             "type": "integer",
             "format": "int32"
           },
-          "routeId": {
+          "wayId": {
             "type": "integer",
-            "format": "int32"
+            "format": "int64"
           },
-          "route": {
-            "$ref": "#/components/schemas/Route"
+          "way": {
+            "$ref": "#/components/schemas/Way"
           },
           "userId": {
             "type": "integer",
@@ -889,6 +896,28 @@
           },
           "user": {
             "$ref": "#/components/schemas/User"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Way": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nodeIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "nullable": true
+          },
+          "highwayType": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

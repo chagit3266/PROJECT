@@ -1,15 +1,15 @@
 [
   {
-    "ContainingType": "WebApi.Controllers.PointController",
+    "ContainingType": "WebApi.Controllers.NodeController",
     "Method": "Get",
-    "RelativePath": "api/Point",
+    "RelativePath": "api/Node",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Repository.Entities.Point, Repository, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Repository.Entities.Node, Repository, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -20,9 +20,9 @@
     ]
   },
   {
-    "ContainingType": "WebApi.Controllers.PointController",
+    "ContainingType": "WebApi.Controllers.NodeController",
     "Method": "Post",
-    "RelativePath": "api/Point",
+    "RelativePath": "api/Node",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -42,9 +42,9 @@
     ]
   },
   {
-    "ContainingType": "WebApi.Controllers.PointController",
+    "ContainingType": "WebApi.Controllers.NodeController",
     "Method": "Get",
-    "RelativePath": "api/Point/{id}",
+    "RelativePath": "api/Node/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -57,7 +57,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Repository.Entities.Point",
+        "Type": "Repository.Entities.Node",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -68,9 +68,9 @@
     ]
   },
   {
-    "ContainingType": "WebApi.Controllers.PointController",
+    "ContainingType": "WebApi.Controllers.NodeController",
     "Method": "Put",
-    "RelativePath": "api/Point/{id}",
+    "RelativePath": "api/Node/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -95,9 +95,9 @@
     ]
   },
   {
-    "ContainingType": "WebApi.Controllers.PointController",
+    "ContainingType": "WebApi.Controllers.NodeController",
     "Method": "Delete",
-    "RelativePath": "api/Point/{id}",
+    "RelativePath": "api/Node/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -110,122 +110,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Repository.Entities.Point",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebApi.Controllers.RouteController",
-    "Method": "Get",
-    "RelativePath": "api/Route",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.List\u00601[[Repository.Entities.Route, Repository, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebApi.Controllers.RouteController",
-    "Method": "Post",
-    "RelativePath": "api/Route",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebApi.Controllers.RouteController",
-    "Method": "Get",
-    "RelativePath": "api/Route/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Repository.Entities.Route",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebApi.Controllers.RouteController",
-    "Method": "Put",
-    "RelativePath": "api/Route/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "value",
-        "Type": "System.String",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebApi.Controllers.RouteController",
-    "Method": "Delete",
-    "RelativePath": "api/Route/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Repository.Entities.Route",
+        "Type": "Repository.Entities.Node",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -341,7 +226,7 @@
   {
     "ContainingType": "WebApi.Controllers.UserController",
     "Method": "Post",
-    "RelativePath": "api/User/login",
+    "RelativePath": "api/User/signIn",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -349,6 +234,22 @@
       {
         "Name": "userLogin",
         "Type": "WebApi.Models.UserLogin",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebApi.Controllers.UserController",
+    "Method": "Post",
+    "RelativePath": "api/User/signUp",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Repository.Entities.User",
         "IsRequired": true
       }
     ],
@@ -364,7 +265,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.List\u00601[[Repository.Entities.UserRoutes, Repository, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Repository.Entities.UserWay, Repository, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -412,7 +313,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Repository.Entities.UserRoutes",
+        "Type": "Repository.Entities.UserWay",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -465,7 +366,122 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Repository.Entities.UserRoutes",
+        "Type": "Repository.Entities.UserWay",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApi.Controllers.WayController",
+    "Method": "Get",
+    "RelativePath": "api/Way",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Repository.Entities.Way, Repository, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApi.Controllers.WayController",
+    "Method": "Post",
+    "RelativePath": "api/Way",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApi.Controllers.WayController",
+    "Method": "Get",
+    "RelativePath": "api/Way/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Repository.Entities.Way",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApi.Controllers.WayController",
+    "Method": "Put",
+    "RelativePath": "api/Way/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "value",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApi.Controllers.WayController",
+    "Method": "Delete",
+    "RelativePath": "api/Way/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Repository.Entities.Way",
         "MediaTypes": [
           "text/plain",
           "application/json",

@@ -12,16 +12,19 @@ namespace WebApi.Controllers
     [ApiController]
     public class WayController : ControllerBase
     {
+        private readonly IAlgorithem algorithem;
         private readonly IService<Way> _service;
-        public WayController(IService<Way> service)
+        public WayController(IService<Way> service, IAlgorithem algorithem)
         {
             _service = service;
+            this.algorithem = algorithem;
         }
         // GET: api/<RouteController>
         [HttpGet]
-        public Task<List<Way>> Get()
+        public async Task<ActionResult<List<Way>>> Get()
         {
-           return _service.GetAll();
+            string join= await algorithem.GetOsmData(51.5, -0.1);
+            return algorithem.ExtractWays(join);
         }
 
         // GET api/<RouteController>/5
