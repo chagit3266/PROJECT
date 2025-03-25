@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import userSlice from '../features/user/userSlice'
-import pointsSlice from '../features/points/pointsSlice'
+import { pointsSlice } from '../features/point/pointsSlice'
 
 
 export const store = configureStore({

@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 //יהיה  מערך שיכיל את הנקודות שבהן יעבור המשתמש
 //יתכנו שינויים במהלך הדרך כאשר המשתמש יסתה מהנתיב שהוכן לו
@@ -14,6 +14,10 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     arr:[]
 }
+export const /*שליחת נקודת התחלה וסיום*/ a =createAsyncThunk("",async(point1,point2,thunkApi)=>{
+  let {data}=await axios.post("https://localhost:7026/way",point1,point2);
+  return data;
+})
 
 export const pointsSlice = createSlice({
   name: 'points',
@@ -27,9 +31,15 @@ export const pointsSlice = createSlice({
     },
     
   },
+  //מורכבים reducers
+  extraReducers:builder=>{
+    builder.addCase(a.fulfilled,(state,action)=>{
+        
+    })
+  }
 })
 
 
-export const { initialization,} = pointsSlice.actions
+export const { initialization} = pointsSlice.actions
 
 export default pointsSlice.reducer

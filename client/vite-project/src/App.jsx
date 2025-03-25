@@ -9,7 +9,7 @@ function App() {
     <>
      <div className="app-container">
       <Map />  {/* רכיב המפה */}
-      /*<Login /> {/* רכיב ה-Login */}*/
+      {/*<Login />  רכיב ה-Login */}
     </div> 
     </>
   )

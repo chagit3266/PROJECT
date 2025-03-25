@@ -15,8 +15,8 @@ const initialState = {
 
 export const loginServer=createAsyncThunk("user-login",async(user,thunkApi)=>{
   //כאן נבצע קריאה לשרת
-  let {data}=await axios.post("https://localhost:7026/user/login",user);//יכיל- כלומר מה יחזור מהשרת userצריך להחליט מה ה
-  return data
+  let {data}=await axios.post("https://localhost:7026/api/user/signIn",user);//יכיל- כלומר מה יחזור מהשרת userצריך להחליט מה ה
+  return data;
 })
 
 export const userSlice = createSlice({
@@ -34,13 +34,14 @@ export const userSlice = createSlice({
   //מורכבים reducers
   extraReducers:builder=>{
     builder.addCase(loginServer.fulfilled,(state,action)=>{//הצליח
-      state.currentUser=action.payload
+      localStorage("dataToken",action.payload);
+      state.status=fulfilled;
     }).addCase(loginServer.rejected,(state,action)=>{//נכשל
       //אם הוא לא הצליח להתחבר אני אשלח אותו להרשמה מחדש
-      state.status="failed"
+      state.status="failed";
     }).addCase(loginServer.pending,(state,action)=>{//תוך כדי
       //לפי הסטטוס ניצר סימן טוען עמוד 
-      state.status="pending"
+      state.status="pending";
     })
   }
 })
