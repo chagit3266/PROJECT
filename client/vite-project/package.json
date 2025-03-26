@@ -12,10 +12,13 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.0",
     "leaflet": "^1.9.4",
+    "mapbox-gl": "^3.10.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-leaflet": "^5.0.0",
-    "react-redux": "^9.2.0"
+    "react-map-gl": "^8.0.1",
+    "react-redux": "^9.2.0",
+    "react-select": "^5.10.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",

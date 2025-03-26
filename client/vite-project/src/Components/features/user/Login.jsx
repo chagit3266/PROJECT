@@ -14,7 +14,7 @@ const Login = () => {
     } else {
       setErrorMessage("");
       console.log("Login attempt with", email, password);
-      //של התחברותAPI-יכול להיות כאן קריאה ל 
+      //של התחברות API-יכול להיות כאן קריאה ל 
     }
   };
 

@@ -12,34 +12,41 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 //"כאשר הגענו לנקודה האחרונה -שינוי סמן והשמעת "הגעת ליעד
 
 const initialState = {
-    arr:[]
+    arr:[],
+    status:null
 }
-export const /*שליחת נקודת התחלה וסיום*/ a =createAsyncThunk("",async(point1,point2,thunkApi)=>{
-  let {data}=await axios.post("https://localhost:7026/way",point1,point2);
+// נקראית בתחילה וכן אם המשתמש סטה מן המסלול
+// שליחת נקודת התחלה וסיום
+export const initialization =createAsyncThunk("way/initialization",async({ start, end },thunkApi)=>{
+  let {data}=await axios.post("https://localhost:7026/api/way/initialization",{ start, end });
   return data;
 })
 
-export const pointsSlice = createSlice({
+// סיום הניווט 
+// כאשר המשתמש סוגר את האתר
+// או כאשר הוא מגיע ליעד
+export const endWalk = createAsyncThunk("way/end", async (_, thunkApi) => {
+  await axios.post("https://localhost:7026/api/way/end");
+  return null;
+});
+
+export const waySlice = createSlice({
   name: 'points',
   initialState,
   reducers: {
-    //אתחול
-    initialization: (state,action) => {
-      //קריאת שרת לקבל את מערך המסלול
-      //יהיה נקודת התחלה ונקודת סיום actionב
-      
-    },
     
   },
   //מורכבים reducers
   extraReducers:builder=>{
-    builder.addCase(a.fulfilled,(state,action)=>{
-        
+    builder.addCase(initialization.fulfilled,(state,action)=>{
+        state.arr=action.payload;//חוזר מערך נקודות -שהן תהוונה את המסלול
+    }).addCase(endWalk.fulfilled,(state,action)=>{
+        state.status="endWalk";
     })
   }
 })
 
 
-export const { initialization} = pointsSlice.actions
+export const {} = waySlice.actions
 
-export default pointsSlice.reducer
+export default waySlice.reducer
