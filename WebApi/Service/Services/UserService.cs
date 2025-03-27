@@ -47,7 +47,7 @@ namespace Service.Services
         public async Task<User> GetByEmailAndPassword(string email, string password)
         {
             var users = await GetAll();
-            return users.FirstOrDefault(x => ( x.Password==password && x.Email==email));
+            return users.FirstOrDefault(x => ( x.Password==password && x.Email==email));//אם יפתחו לאותו מייל כמה סיסמאות כל פעם יפתח מחדש
         }
         public async Task<User> Update(int id, User item)
         {
@@ -78,7 +78,6 @@ namespace Service.Services
             if (user != null)
                 return user;
             return null; 
-
         }
     }
 }

@@ -14,6 +14,7 @@ namespace Repository.Entities
         public long Id { get; set; }
         public List<long> NodeIds { get; set; } = new List<long>();
         public string HighwayType { get; set; }//OSM שדה לסוג הדרך לפי
+
         
     }
 }

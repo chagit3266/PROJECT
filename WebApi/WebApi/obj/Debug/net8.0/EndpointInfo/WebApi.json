@@ -658,19 +658,42 @@
         }
       }
     },
-    "/api/Way/{id}": {
+    "/api/Way/initialization": {
       "get": {
         "tags": [
           "Way"
         ],
         "parameters": [
           {
-            "name": "id",
-            "in": "path",
-            "required": true,
+            "name": "startLat",
+            "in": "query",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "startLon",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "endLat",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "endLon",
+            "in": "query",
+            "schema": {
+              "type": "number",
+              "format": "double"
             }
           }
         ],
@@ -680,23 +703,34 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Way"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Node"
+                  }
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Way"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Node"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Way"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Node"
+                  }
                 }
               }
             }
           }
         }
-      },
+      }
+    },
+    "/api/Way/{id}": {
       "put": {
         "tags": [
           "Way"

@@ -414,32 +414,6 @@
   },
   {
     "ContainingType": "WebApi.Controllers.WayController",
-    "Method": "Get",
-    "RelativePath": "api/Way/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Repository.Entities.Way",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "WebApi.Controllers.WayController",
     "Method": "Put",
     "RelativePath": "api/Way/{id}",
     "HttpMethod": "PUT",
@@ -482,6 +456,47 @@
     "ReturnTypes": [
       {
         "Type": "Repository.Entities.Way",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "WebApi.Controllers.WayController",
+    "Method": "Get",
+    "RelativePath": "api/Way/initialization",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "startLat",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "startLon",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "endLat",
+        "Type": "System.Double",
+        "IsRequired": false
+      },
+      {
+        "Name": "endLon",
+        "Type": "System.Double",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Repository.Entities.Node, Repository, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

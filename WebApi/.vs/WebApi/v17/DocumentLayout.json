@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{95EB934A-E188-43D4-AEC7-8E241AB831F9}|Service\\Service.csproj|solutionrelative:service\\services\\algorithmservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{95EB934A-E188-43D4-AEC7-8E241AB831F9}|Service\\Service.csproj|c:\\users\\1\\desktop\\project\\webapi\\service\\interfaces\\ialgorithem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95EB934A-E188-43D4-AEC7-8E241AB831F9}|Service\\Service.csproj|solutionrelative:service\\interfaces\\ialgorithem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{12340F36-4A21-4DB7-84C7-2321E0ED09B0}|WebApi\\WebApi.csproj|c:\\users\\1\\desktop\\project\\webapi\\webapi\\controllers\\waycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{12340F36-4A21-4DB7-84C7-2321E0ED09B0}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\waycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -15,8 +19,8 @@
       "RelativeMoniker": "D:0:0:{12340F36-4A21-4DB7-84C7-2321E0ED09B0}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{95EB934A-E188-43D4-AEC7-8E241AB831F9}|Service\\Service.csproj|c:\\users\\1\\desktop\\project\\webapi\\service\\interfaces\\ialgorithem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{95EB934A-E188-43D4-AEC7-8E241AB831F9}|Service\\Service.csproj|solutionrelative:service\\interfaces\\ialgorithem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{95EB934A-E188-43D4-AEC7-8E241AB831F9}|Service\\Service.csproj|c:\\users\\1\\desktop\\project\\webapi\\service\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95EB934A-E188-43D4-AEC7-8E241AB831F9}|Service\\Service.csproj|solutionrelative:service\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,32 +30,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "WayController.cs",
-              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\WebApi\\Controllers\\WayController.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\WayController.cs",
-              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\WebApi\\Controllers\\WayController.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\WayController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBcAAAAyAAAAAAAAAA==",
+              "Title": "IAlgorithem.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Interfaces\\IAlgorithem.cs",
+              "RelativeDocumentMoniker": "Service\\Interfaces\\IAlgorithem.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Interfaces\\IAlgorithem.cs",
+              "RelativeToolTip": "Service\\Interfaces\\IAlgorithem.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAswDUAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T21:32:05.84Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\WebApi\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "WebApi\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\WebApi\\Controllers\\UserController.cs",
-              "RelativeToolTip": "WebApi\\Controllers\\UserController.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAgwDMAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T17:45:52.887Z",
+              "WhenOpened": "2025-03-27T17:02:14.566Z",
               "EditorCaption": ""
             },
             {
@@ -62,22 +53,47 @@
               "RelativeDocumentMoniker": "Service\\Services\\AlgorithmService.cs",
               "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Services\\AlgorithmService.cs",
               "RelativeToolTip": "Service\\Services\\AlgorithmService.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAADgv3YAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAL0AAAAAAAAAAAAuwMgAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-25T16:35:53.319Z",
+              "WhenOpened": "2025-03-27T12:36:13.713Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IAlgorithem.cs",
-              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Interfaces\\IAlgorithem.cs",
-              "RelativeDocumentMoniker": "Service\\Interfaces\\IAlgorithem.cs",
-              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Interfaces\\IAlgorithem.cs",
-              "RelativeToolTip": "Service\\Interfaces\\IAlgorithem.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAA7wB0AAAAeAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "WayController.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\WebApi\\Controllers\\WayController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\WayController.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\WebApi\\Controllers\\WayController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\WayController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwCEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T17:09:28.79Z",
+              "WhenOpened": "2025-03-27T12:35:11.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Service\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Services\\UserService.cs",
+              "RelativeToolTip": "Service\\Services\\UserService.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAADwv0wAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T12:22:25.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\WebApi\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\WebApi\\Controllers\\UserController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\UserController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwCEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-27T12:04:21.499Z",
               "EditorCaption": ""
             }
           ]

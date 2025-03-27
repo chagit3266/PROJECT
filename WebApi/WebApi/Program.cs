@@ -3,9 +3,10 @@ using Repository.Interfaces;
 using Service.Interfaces;
 using Service.Services;
 //using static Microsoft.EntityFrameworkCore.DbLoggerCategory;//צריך???
-//using Database1 = Mock.Database;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 
@@ -15,14 +16,26 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// הוספת CORS
+var myAllowSpecificOrigin = "_myAllowSpecificOrigin";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: myAllowSpecificOrigin,
+        policy =>
+        {
+            policy.AllowAnyOrigin()//.WithOrigins("http://localhost:5173/") //Frontend של ה URL וודאי שזה ה
+                  .AllowAnyMethod()
+                  .AllowAnyHeader();
+        });
+});
+
+
 //Extention -במקום לעשות פה הזרקת תלויות ניצור לכל שכבה את ההזרקת תלויות שלה
 //ExtentionName(שם שכבה)
 //builder.Services.AddRepository();
 builder.Services.AddService();
 
 builder.Services.AddDbContext<IContext,Database>();
-
-
 
 
 //IConfiguration- ו TokenService הוספת 

@@ -21,17 +21,17 @@ namespace WebApi.Controllers
         }
         // GET: api/<RouteController>
         [HttpGet]
-        public async Task<ActionResult<List<Way>>> Get()
+        public async Task<List<Way>> Get()
         {
-            string join= await algorithem.GetOsmData(51.5, -0.1);
+            string join= await algorithem.GetOsmData(51.5, -0.1,100);
             return algorithem.ExtractWays(join);
         }
 
         // GET api/<RouteController>/5
-        [HttpGet("{id}")]
-        public Task<Way> Get(int id)
+        [HttpGet("initialization")]
+        public async Task<List<Node>> Get(double startLat, double startLon, double endLat, double endLon)
         {
-            return _service.GetById(id);
+            return await algorithem.CalculateRoute(new Node { Lat = startLat, Lon = startLon }, new Node { Lat = endLat, Lon = endLon });
         }
 
         // POST api/<RouteController>
