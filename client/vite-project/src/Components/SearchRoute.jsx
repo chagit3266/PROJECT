@@ -1,30 +1,60 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { initialization } from "./features/way/waySlice";
+import { initialization, updateCurrentLocation } from "./features/way/waySlice";
+import Autocomplete from "./Autocomplete";
+import axios from "axios";
+
 export default function SearchRoute() {
 
-    const dispath = useDispatch();
+    const dispatch = useDispatch();
     const wayArr = useSelector((state) => state.way.arr)
 
-    const [from, setFrom] = useState("");
-    const [to, setTo] = useState("");
-    const [fromSuggestions, setFromSuggestions] = useState([]);
-    const [toSuggestions, setToSuggestions] = useState([]);
-    const [isLocationSelected, setIsLocationSelected] = useState(false);
+    const [from, setFrom] = useState({});
+    const [to, setTo] = useState({});
+
+    let intervalId;
 
     //פונקציה לזיהוי מקום
     const detectLocation = async () => {
-        return new Promise((resolve, reject) => {
-            if (!navigator.geolocation) {
-                reject("הדפדפן לא תומך בזיהוי מיקום");
-            }
-            navigator.geolocation.getCurrentPosition(
-                (position) => resolve({ lat: position.coords.latitude, lon: position.coords.longitude }),
-                (error) => reject(error.message),
-                { enableHighAccuracy: true }
-            );
-        });
+        try {
+            // מנסה להשיג את המיקום דרך ה-GPS של המחשב
+            const location = await new Promise((resolve, reject) => {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        (position) => {
+                            resolve({
+                                lat: position.coords.latitude,
+                                lon: position.coords.longitude,
+                            });
+                        },
+                        (error) => {
+                            reject({ error: error.message });
+                        },
+                        {
+                            enableHighAccuracy: true,  // מבקש דיוק גבוה יותר
+                            timeout: 50000000000000,  // זמן מקסימלי לחכות
+                            maximumAge: 0  // לא להשתמש במיקום שנשמר קודם
+                        }
+                    );
+                } else {
+                    reject({ error: "Geolocation is not supported by this browser." });
+                }
+            });
+            dispatch(updateCurrentLocation({
+                lat: location.lat,
+                lon: location.lon,
+            }));
+            // מחזיר את הקואורדינטות (latitude, longitude)
+            return {
+                lat: location.lat,
+                lon: location.lon,
+            };
+        } catch (error) {
+            console.error(error);
+            return { error: error.message };  // אם קרתה שגיאה
+        }
     };
+
 
     //פונקציה להמרה מכתובת מילולית לקורדינאטות
     const convertAddressToCoordinates = async (address) => {
@@ -33,13 +63,17 @@ export default function SearchRoute() {
         if (data.length === 0) throw new Error("כתובת לא נמצאה");
         return { lat: data[0].lat, lon: data[0].lon };
     };
+
     //בדיקה האם הנקודה הנוכחית היא בתוך המסלול
     //ולמחוק את הנקודות שכבר עברתי
     async function isPointInRoute(local) {
         //arrבדיקה האם הנוכחי הוא בין הראשון לשני ב
+
+
         return true;
     }
 
+    //פונקציה למציאת מרחק
     function CalculateDistance(startLat, startLon, endLat, endLon) {
         let d = 0;
         //d = 2R * arcsin( sqrt( sin²(Δφ/2) + cos(φ1) * cos(φ2) * sin²(Δλ/2) ) ) 
@@ -62,86 +96,54 @@ export default function SearchRoute() {
 
 
 
-    //כל 3 שניות שליחה לפונקצית זיהוי מקום
-    //צריך לבדוק אם סטה מהמסלול
+
     useEffect(() => {
-        const checkPoint = async () => {
-            let local = detectLocation();
-            if (!await isPointInRoute(local)) {//כלומר אם לא חלק מהמסלול
-                dispath(initialization(local, wayArr[length - 1]))
-                // C#שלב שני להוסיף פה גם שליחה ל
-            }
-        }
-        setTimeout(() => {
-            checkPoint();
-        }, 3000);
+        dispatch(updateCurrentLocation({ lat: 31.7767, lon: 35.2345 }))
+        return () => clearInterval(intervalId);
     }, [])
 
+    //כל 3 שניות שליחה לפונקצית זיהוי מקום
+    //צריך לבדוק אם סטה מהמסלול
+    //צריך להתחיל רק אחרי שנלחץ על צא לדרך
+    const checkPoint = async () => {
+        let local = await detectLocation();
+        if (!await isPointInRoute(local)) {//כלומר אם לא חלק מהמסלול
+            dispath(initialization(local, wayArr[wayArr.length - 1]))
+            // C#שלב שני להוסיף פה גם שליחה ל
+        }
+    }
+    const startRoute = async () => {
+        console.log("----------------------------", await detectLocation());
+        dispatch(initialization({ from, to }))
+        // כאן מתחילים את הבדיקה כל 3 שניות
+        intervalId = setInterval(async () => {
+            await checkPoint();
+        }, 3000);
+    };
 
+    const handleAddressSelect = async(address) => {
+        //נשלח את הכתובת להמרה לקורדינאטות
+        let {lat,lon}= await convertAddressToCoordinates(address);
+        console.log("כתובת שנבחרה:", address);
+    };
 
     return (
-        
+
         <div className="search-route">
-            {/* 🔹 שדה נקודת מוצא */}
-            <div className="input-container">
-                <input
-                    type="text"
-                    placeholder="נקודת מוצא"
-                    value={from}
-                    onChange={(e) => {
-                        setFrom(e.target.value);
-                        fetchAddressSuggestions(e.target.value, setFromSuggestions);
-                    }}
-                />
-                {/* 🔹 זיהוי מקום */}
-                {!isLocationSelected && (
-                    <button onClick={() => detectLocation(setFrom)}>📍 זיהוי מיקום</button>
-                )}
-                {/* 🔹 הצעות אוטומטיות */}
-                {fromSuggestions.length > 0 && (
-                    <ul className="suggestions">
-                        {fromSuggestions.map((suggestion, index) => (
-                            <li key={index} onClick={() => setFrom(suggestion)}>
-                                {suggestion}
-                            </li>
-                        ))}
-                    </ul>
-                )}
-            </div>
 
-            {/* 🔹 שדה יעד */}
-            <div className="input-container">
-                <input
-                    type="text"
-                    placeholder="יעד"
-                    value={to}
-                    onChange={(e) => {
-                        setTo(e.target.value);
-                        fetchAddressSuggestions(e.target.value, setToSuggestions);
-                    }}
-                />
-                {/* 🔹 הצעות אוטומטיות */}
-                {toSuggestions.length > 0 && (
-                    <ul className="suggestions">
-                        {toSuggestions.map((suggestion, index) => (
-                            <li key={index} onClick={() => setTo(suggestion)}>
-                                {suggestion}
-                            </li>
-                        ))}
-                    </ul>
-                )}
+            <div className="flex">
+                <Autocomplete onSelect={handleAddressSelect} textInput="בחרו נקודת התחלה" />
+                <Autocomplete onSelect={handleAddressSelect} textInput="בחרו יעד" />
+                <button onClick={startRoute}>
+                    צא לדרך
+                </button>
             </div>
-
-            <button onClick={() => dispath(initialization({ from, to }))}>
-                חפש מסלול
-            </button>
         </div>
     )
 }
 // const [selectedAddress, setSelectedAddress] = useState("");
 
 //   const handleAddressSelect = (address) => {
-//     debugger
 //     setSelectedAddress(address);
 //     console.log("כתובת שנבחרה:", address);
 //   };
@@ -149,7 +151,7 @@ export default function SearchRoute() {
 //   return (
 //     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
 //       <h2>בחירת כתובת</h2>
-//       <Autocomplete onSelect={handleAddressSelect} />
+//       <Autocomplete onSelect={handleAddressSelect} textInput="נקודת מוצא"/>
 //       {selectedAddress && (
 //         <p>
 //           <strong>כתובת שנבחרה:</strong> {selectedAddress}

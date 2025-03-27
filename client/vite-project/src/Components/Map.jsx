@@ -1,37 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useSelector } from "react-redux";
 
-//  export default function Map(){
-//      return(
-//        <div className="map">
-//           <MapContainer 
-//            center={[48.8566, 2.3522]} 
-//            zoom={13} 
-//            className="h-full w-full"
-//            style={{ zIndex: 1 }}
-//           >
-//           <TileLayer
-//                 //attribution='&copy; <a href="https://www.maptiler.com/copyright/">MapTiler</a>'
-//                 //url="https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=YOUR_MAPTILER_KEY"
-//                 {/*url="https://api.maptiler.com/maps/streets-v2//{z}/{x}/{y}.png?key=JIAWwfSxJFtPLibS78a3#-0.2/0.00000/-38.44139*/}
-//                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-//           />   
-//           <Marker position={[48.8566, 2.3522]}>
-//           <Popup>
-//             המיקום שלך כרגע
-//           </Popup>
-//         </Marker>
-//       </MapContainer>
-
-//       </div>
-//      );
-//  };
-
 
 const Map = () => {
-  const wayArr = useSelector((state) => state.way.arr);//store- לוקח את המערך נקודות מה
+  const way = useSelector((state) => state.way)
+  const wayArr = way.arr;//store- לוקח את המערך נקודות מה
 
   const customRedMarker = new L.DivIcon({
     className: 'custom-red-marker',
@@ -58,23 +33,30 @@ const Map = () => {
     iconSize: [50, 50],  // Size for the halo
     iconAnchor: [25, 25], // Anchor the icon in the center
   });
+  if (!way.currentLocation || !way.currentLocation.lat || !way.currentLocation.lon) {
+    return <div>Loading...</div>; // אם המיקום לא זמין, תצוגה בזמן טעינה
+  }
   return (
-    <MapContainer center={[31.7683, 35.2137]} zoom={25} className="h-[80vh] w-full rounded-lg" style={{ zIndex: 1 }}>
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      {/* שרטוט מסלול לפי רשימת נקודות*/}
-      <Polyline positions={wayArr} color="blue" weight={5} />
-      {
-        wayArr.length > 0 && (
-          <Marker position={[wayArr[length - 1][0], wayArr[length - 1][1]]} icon={customRedMarker}>
-            <Popup>!הגעת ליעד</Popup>
-          </Marker>
-        )}
-      <Marker position={[31.7687, 35.2140]} icon={customWazeMarker}>
-        <Popup>!את/ה כאן</Popup>
-      </Marker>
-    </MapContainer>
+    <div className="map">
+      <MapContainer center={[way.currentLocation.lat , way.currentLocation.lon ]} zoom={25} className="h-[80vh] w-full rounded-lg" style={{ zIndex: 1 }}>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        {/* שרטוט מסלול לפי רשימת נקודות*/}
+        <Polyline positions={wayArr} color="blue" weight={5} />
+        {
+          wayArr.length > 0 && (
+            <Marker position={[wayArr[wayArr.length - 1].lat, wayArr[wayArr.length - 1].lon]} icon={customRedMarker}>
+              <Popup>!הגעת ליעד</Popup>
+            </Marker>
+          )}
+        {
+          way.currentLocation && (
+            <Marker position={[way.currentLocation.lat, way.currentLocation.lon]} icon={customWazeMarker}>
+              <Popup>!את/ה כאן</Popup>
+            </Marker>)}
+      </MapContainer>
+    </div>
   );
 };
 

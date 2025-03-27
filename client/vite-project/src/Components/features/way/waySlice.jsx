@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice, current } from '@reduxjs/toolkit'
 
 //יהיה  מערך שיכיל את הנקודות שבהן יעבור המשתמש
 //יתכנו שינויים במהלך הדרך כאשר המשתמש יסתה מהנתיב שהוכן לו
@@ -13,6 +13,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     arr:[],
+    currentLocation:{},
     status:null
 }
 // נקראית בתחילה וכן אם המשתמש סטה מן המסלול
@@ -34,7 +35,9 @@ export const waySlice = createSlice({
   name: 'points',
   initialState,
   reducers: {
-    
+    updateCurrentLocation:(state,action)=>{
+      state.currentLocation=action.payload
+    }
   },
   //מורכבים reducers
   extraReducers:builder=>{
@@ -47,6 +50,6 @@ export const waySlice = createSlice({
 })
 
 
-export const {} = waySlice.actions
+export const {updateCurrentLocation} = waySlice.actions
 
 export default waySlice.reducer

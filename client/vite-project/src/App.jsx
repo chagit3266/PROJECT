@@ -11,11 +11,10 @@ function App() {
     <>
      <div className="app-container">
        <Map /> {/* רכיב המפה */}
-      {/*<SearchRoute/>*/}
+       <SearchRoute/>{/*רכיב חיפוש מסלול*/}
      </div> 
      <Login /> {/* רכיב ה-Login */}
     
-     <Autocomplete></Autocomplete> 
      </>
   )
 }

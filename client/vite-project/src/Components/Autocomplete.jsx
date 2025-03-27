@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Autocomplete = ({ onSelect }) => {
+const Autocomplete = ({ onSelect, textInput }) => {
     const [query, setQuery] = useState("");//הקלט מהמשתמש
     const [suggestions, setSuggestions] = useState([]);//מערך הצעות הכתובות למשתמש
 
@@ -18,19 +18,8 @@ const Autocomplete = ({ onSelect }) => {
         try {
             const response = await fetch(url);
             const data = await response.json();
-            debugger
             console.log(data);
 
-            // עיבוד התוצאות לסינון הרחוב, מספר הבניין, עיר וארץ
-            // const filteredResults = data.map((item) => {
-            //     return {
-            //         display_name: ```${item.address.road || ""} ${item.address.house_number || ""}, ${item.address.city || ""}, ${item.address.country || ""}```,
-            //         road: item.address?.road || "",
-            //         house_number: item.address?.house_number || "",
-            //         city: item.address?.city || "",
-            //         country: item.address?.country || "",
-            //     };
-            // });
             if (data && Array.isArray(data.features)) {
                 const filteredResults = data.features.map((item) => {
                     return {
@@ -71,12 +60,12 @@ const Autocomplete = ({ onSelect }) => {
     };
 
     return (
-        <div style={{ position: "relative", width: "300px" }}>
+        <div className="input" style={{ position: "relative", width: "300px" }}>
             <input
                 type="text"
                 value={query}
                 onChange={handleChange}//כתובות שמתחליות באותיות אלו API ושולחת לחיפוש ב input נשלח לפונקציה שמעדכנת 
-                placeholder="...הקלד כתובת"
+                placeholder={textInput}
                 style={{ width: "100%", padding: "8px", fontSize: "16px" }}
             />
             {suggestions.length > 0 && (
@@ -94,6 +83,11 @@ const Autocomplete = ({ onSelect }) => {
                         zIndex: "1000",
                     }}
                 >
+                    {textInput === "בחרו נקודת התחלה" && <li onClick={()=>onSelect("זיהוי מקום")}style={{
+                                padding: "10px",
+                                cursor: "pointer",
+                                borderBottom: "1px solid #eee",
+                            }}>המיקום שלך</li>}
                     {suggestions.map((item, index) => (
                         <li
                             key={index}
