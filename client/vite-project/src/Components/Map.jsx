@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, Polyline, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useSelector } from "react-redux";
-
+import L from "leaflet";
 
 const Map = () => {
   const way = useSelector((state) => state.way)
@@ -33,15 +33,26 @@ const Map = () => {
     iconSize: [50, 50],  // Size for the halo
     iconAnchor: [25, 25], // Anchor the icon in the center
   });
+
+  const UpdateMapPosition = () => {
+    const map = useMap();
+    useEffect(() => {
+      if (map && way.currentLocation) {
+        map.setView([way.currentLocation.lat, way.currentLocation.lon], map.getZoom());
+      }
+    }, [way.currentLocation, map]); // עדכון המפה רק כשיש שינוי במיקום
+  };
+
   if (!way.currentLocation || !way.currentLocation.lat || !way.currentLocation.lon) {
     return <div>Loading...</div>; // אם המיקום לא זמין, תצוגה בזמן טעינה
   }
   return (
     <div className="map">
-      <MapContainer center={[way.currentLocation.lat , way.currentLocation.lon ]} zoom={25} className="h-[80vh] w-full rounded-lg" style={{ zIndex: 1 }}>
+      <MapContainer /*key={`${way.currentLocation.lat}-${way.currentLocation.lon}`} */ center={[way.currentLocation.lat, way.currentLocation.lon]} zoom={25} className="h-[80vh] w-full rounded-lg" style={{ zIndex: 1 }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+
         {/* שרטוט מסלול לפי רשימת נקודות*/}
         <Polyline positions={wayArr} color="blue" weight={5} />
         {
@@ -55,9 +66,12 @@ const Map = () => {
             <Marker position={[way.currentLocation.lat, way.currentLocation.lon]} icon={customWazeMarker}>
               <Popup>!את/ה כאן</Popup>
             </Marker>)}
+        <UpdateMapPosition /> {/* הוספת עדכון המיקום בתוך MapContainer */}
       </MapContainer>
     </div>
   );
 };
 
 export default Map;
+
+

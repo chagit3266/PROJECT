@@ -10,6 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.0.0",
+    "@mui/material": "^7.0.0",
+    "@react-oauth/google": "^0.12.1",
     "@reduxjs/toolkit": "^2.6.0",
     "axios": "^1.8.4",
     "leaflet": "^1.9.4",
@@ -19,7 +24,7 @@
     "react-leaflet": "^5.0.0",
     "react-map-gl": "^8.0.1",
     "react-redux": "^9.2.0",
-    "react-router-dom": "^7.4.0",
+    "react-router-dom": "^7.4.1",
     "react-select": "^5.10.1"
   },
   "devDependencies": {

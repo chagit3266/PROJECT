@@ -1,49 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
 #root {
   /* max-width: 1280px; */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  align-items: center;
+  --title-font: 500 100% / 1 Gotham Rounded, Rubik, sans-serif;
+  --title-font-boing-400: 400 100% / 1 Boing-400, Rubik, sans-serif;
+  --title-font-boing-500: 500 100% / 1 Boing-500, Rubik, sans-serif;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
 
 
 /*css to Map*/
@@ -55,12 +24,31 @@ body,
   margin: 0;
   padding: 0;
   overflow: hidden;
-  /* למנוע גלילה מיותרת */
+  /* למנוע גלילה */
 }
+.homePage{
+  background-color:#356EB6;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  div{
+    background-image:url(./img/GoPath.png);
+    height: 40vh;
+    width: 40vw;
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size: contain;
+  }
+}
+
+
 
 .app-container {
   display: flex;
-  height: 100vh;  /* רוחב מלא */
+  height: 100vh;
+  /* רוחב מלא */
   width: 100%;
 }
 
@@ -75,20 +63,28 @@ body,
 
 .search-route {
   box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
-  width: 386px;
-  padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
-  overflow: auto;
-  background-color: #fff;
-  position: relative;
-  z-index: 1;
   /* כדי לשמור עליו מעל המפה */
+  z-index: 1;
+  position: relative;
+  overflow: auto;
+  width: 386px;
 }
-
+.form-input{
+  padding: 1rem;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  justify-self:center;
+}
 @media (min-width: 768px) {
   .search-route:not(.with-poi) {
     width: 386px;
     padding: 0;
+    margin: 0;
+    padding: 0 20px 16px;
+    grid-column-gap: 14px;
+    background-color: #fff;
+    background-position: right 20px top 32px;
   }
 }
 
@@ -134,4 +130,30 @@ body,
 
 .suggestions li:hover {
   background: #f0f0f0;
+}
+
+
+.title {
+  font: var(--title-font-boing-500);
+  font-size: 18px;
+  padding-bottom: 5%;
+}
+
+.out {
+  position: fixed;
+  top:3px; 
+  left: 40px; 
+  background-color: transparent; 
+  color: #0062cb; 
+  border: none; 
+  font-size: 16px;
+  font-weight: 300;
+  cursor: pointer; 
+  padding: 10px 20px;
+  z-index: 1000;
+  text-decoration:dotted;
+}
+.out:focus {
+  outline: none;
+  box-shadow: none; 
 }

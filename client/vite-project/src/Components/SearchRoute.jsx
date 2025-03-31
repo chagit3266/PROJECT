@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { initialization, updateCurrentLocation } from "./features/way/waySlice";
 import Autocomplete from "./Autocomplete";
 import axios from "axios";
+import { Button, Box,Typography } from "@mui/material";
+import SignOutButton from "./features/user/SignOutButton";
 
 export default function SearchRoute() {
 
@@ -11,6 +13,7 @@ export default function SearchRoute() {
 
     const [from, setFrom] = useState({});
     const [to, setTo] = useState({});
+    const[error,SetError]=useState("");
 
     let intervalId;
 
@@ -69,7 +72,6 @@ export default function SearchRoute() {
     async function isPointInRoute(local) {
         //arrבדיקה האם הנוכחי הוא בין הראשון לשני ב
 
-
         return true;
     }
 
@@ -93,10 +95,6 @@ export default function SearchRoute() {
             );
         return d;
     }
-
-
-
-
     useEffect(() => {
         dispatch(updateCurrentLocation({ lat: 31.7767, lon: 35.2345 }))
         return () => clearInterval(intervalId);
@@ -113,49 +111,71 @@ export default function SearchRoute() {
         }
     }
     const startRoute = async () => {
-        console.log("----------------------------", await detectLocation());
-        dispatch(initialization({ from, to }))
-        // כאן מתחילים את הבדיקה כל 3 שניות
-        intervalId = setInterval(async () => {
-            await checkPoint();
-        }, 3000);
+        dispatch(await initialization({ startLat: from.lat, startLon: from.lon, endLat: to.lat, endLon: to.lon }));
+        // // כאן מתחילים את הבדיקה כל 3 שניות
+        // intervalId = setInterval(async () => {
+        //     await checkPoint();
+        // }, 3000);
     };
 
-    const handleAddressSelect = async(address) => {
-        //נשלח את הכתובת להמרה לקורדינאטות
-        let {lat,lon}= await convertAddressToCoordinates(address);
+    const handleAddressSelect = async (address, type) => {
+        let node;
+        if (address === "המיקום שלך") {
+            node = await detectLocation();
+        }
+        else {
+            //נשלח את הכתובת להמרה לקורדינאטות
+            try {
+                node = await convertAddressToCoordinates(address);
+            } catch (error) {
+                 SetError("כתובת לא נמצאה"+{type})
+            }
+        }
         console.log("כתובת שנבחרה:", address);
+        if (type === "source") {
+            setFrom({ lat: node.lat, lon: node.lon });
+
+        } else if (type === "target") {
+            setTo({ lat: node.lat, lon: node.lon });
+        }
     };
 
     return (
+        <>
+            <SignOutButton />
+            <div className="search-route form-input">
 
-        <div className="search-route">
+                <Box
+                    display="flex"
+                    flexDirection="column"
+                    padding="20px"
+                    justifyContent="center"  // ממרכז את התוכן אנכית
+                    alignItems="center"
+                    paddingTop="50px"
+                >
+                    <div className="title">הוראות הליכה</div>
+                    <Box
+                        display="flex"
+                        flexDirection="column"
+                        gap="20px"
+                        width="350px"
+                        justifyContent="center"
+                        alignItems="center"
+                        padding="20px"
+                    >
+                        <Autocomplete onSelect={handleAddressSelect} textInput="בחרו נקודת התחלה" type="source" />
+                        <Autocomplete onSelect={handleAddressSelect} textInput="בחרו יעד" type="target" />
 
-            <div className="flex">
-                <Autocomplete onSelect={handleAddressSelect} textInput="בחרו נקודת התחלה" />
-                <Autocomplete onSelect={handleAddressSelect} textInput="בחרו יעד" />
-                <button onClick={startRoute}>
-                    צא לדרך
-                </button>
+                    </Box>
+                    <Button variant="contained" color="primary" onClick={startRoute}>
+                        צא לדרך
+                    </Button>
+                    {/* שגיאה */}
+                    {error && <Typography color="error">{error}</Typography>}
+
+                </Box>
+
             </div>
-        </div>
-    )
+        </>
+    );
 }
-// const [selectedAddress, setSelectedAddress] = useState("");
-
-//   const handleAddressSelect = (address) => {
-//     setSelectedAddress(address);
-//     console.log("כתובת שנבחרה:", address);
-//   };
-
-//   return (
-//     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-//       <h2>בחירת כתובת</h2>
-//       <Autocomplete onSelect={handleAddressSelect} textInput="נקודת מוצא"/>
-//       {selectedAddress && (
-//         <p>
-//           <strong>כתובת שנבחרה:</strong> {selectedAddress}
-//         </p>
-//       )}
-//     </div>
-//   );
