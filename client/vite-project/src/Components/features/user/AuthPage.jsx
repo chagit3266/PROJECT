@@ -23,46 +23,49 @@ export default function AuthPage() {
     debugger
     if (isLogin) {
       try {
-        const response = await dispatch(signInServer({ email, password })).unwrap();
-        if (response === 'OK')
-          navigate('/route-map')
-        else if (response === 'User not found')
-          setIsLogin(false);
-        else if (response === 'Invalid password')
-          setError("סיסמה שגויה נסה שנית");
+        await dispatch(signInServer({ email, password })).unwrap();
+        setError("")
+        navigate('/route-map');
       } catch (error) {
-        setIsLogin(!isLogin)
-      }
-    }
-    else {
-      try {
-        const response1 = await dispatch(signUpServer({ email, password, userName })).unwrap();
-        if (response1 === 'OK') {
-          try {
-            const response2 = await dispatch(signInServer({ email, password })).unwrap();
-            if (response2 === 'OK')
-              navigate('/route-map')
-            else if (response2 === 'User not found')
-            {
-              setIsLogin(false);
-              setError('משתמש לא רשום')
-            }
-            else if (response2 === 'Invalid password')
-              setError("סיסמה שגויה נסה שנית");
-          } catch (error) {
-            setIsLogin(!isLogin)
-          }
+        console.log(error);
+        if (error === 'User not found') {
+          setError("משתמש לא קיים");
+          setIsLogin(false);
+        } else if (error === 'Invalid password') {
+          setError("סיסמה שגויה נסה שנית");
+        } else {
+          setError("שגיאה לא צפויה");
         }
-        else if (response1 === 'User already exists') {
-          setIsLogin(!isLogin)
-          setError("משתמש רשום")
+      }
+    } else {
+      try {
+        await dispatch(signUpServer({ email, password, userName })).unwrap();
+        setError("")
+        try {
+          await dispatch(signInServer({ email, password })).unwrap();
+          setError("")
+          navigate('/route-map');
+        } catch (error) {
+          if (error === 'User not found') {
+            setIsLogin(false);
+            setError('משתמש לא רשום');
+          } else if (error === 'Invalid password') {
+            setError("סיסמה שגויה נסה שנית");
+          } else {
+            setError("שגיאה לא צפויה");
+          }
         }
 
       } catch (error) {
-        setIsLogin(!isLogin)
+        if (error === 'User already exists') {
+          setError("משתמש רשום");
+          setIsLogin(!isLogin);
+        } else {
+          setError("שגיאה בהרשמה");
+        }
       }
     }
-    setError(""); // לא היה שגיאה
+    
     console.log("מייל:", email, "סיסמה:", password);
   };
 
@@ -81,7 +84,7 @@ export default function AuthPage() {
           {isLogin ? "התחברות" : "הרשמה"}
         </div>
 
-        <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+        <form onSubmit={handleSubmit} style={{ width: "360px" }}>
 
           {/* אם אנחנו בהרשמה, נוסיף גם את שם משתמש */}
           {!isLogin && (
@@ -284,9 +287,9 @@ export default function AuthPage() {
           }}
           onClick={() => {
             setIsLogin(!isLogin);
-            setEmail("");
-            setPassword("");
-            setError("");
+            // setEmail("");
+            // setPassword("");
+            // setError("");
           }}
         >
           {isLogin ? "אין לך חשבון? הירשם עכשיו" : "יש לך חשבון? התחבר"}

@@ -22,12 +22,11 @@ function App() {
   }, [navigate]);
   return (
     <>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/route-map" element={<RouteMap />} />
-      </Routes> */}
-      <RouteMap></RouteMap>
+      </Routes>
     </>
   )
 }

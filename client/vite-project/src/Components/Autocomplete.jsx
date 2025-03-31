@@ -16,7 +16,11 @@ const Autocomplete = ({ onSelect, textInput, type }) => {
 
         //geoapify- בקשה ל
         //מביא 5 כתובות שמכילות את האותיות שכבר הוקשו
-        const url = `https://api.geoapify.com/v1/geocode/search?text=${encodeURIComponent(input + '*')}&lang=he&limit=5&result_type=street&apiKey=5cecf88537aa4ad9a537dff0741fa1c2`;
+        const apiKey = import.meta.env.VITE_API_KEY_GEOAPIFY;
+        console.log(import.meta.env);
+        console.log(import.meta.env.VITE_API_KEY_GEOAPIFY);
+        
+        const url = `https://api.geoapify.com/v1/geocode/search?text=${encodeURIComponent(input + '*')}&lang=he&limit=5&result_type=street&apiKey=${apiKey}`;
         try {
             const response = await fetch(url);
             const data = await response.json();
