@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    public class NodeRepository : IRepository<Node>
+    public class NodeRepository : IRepository<Node,long>
     {
         private readonly IContext _context;
         public NodeRepository(IContext _context)
@@ -24,7 +24,7 @@ namespace Repository.Repositories
             return item;
         }
 
-        public async Task<Node> Delete(int id)
+        public async Task<Node> Delete(long id)
         {
             var node = await GetById(id);
             _context.Nodes.Remove(node);
@@ -37,12 +37,12 @@ namespace Repository.Repositories
             return await _context.Nodes.ToListAsync();
         }
 
-        public async Task<Node> GetById(int id)
+        public async Task<Node> GetById(long id)
         {
             return await _context.Nodes.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<Node> Update(int id,Node item)
+        public async Task<Node> Update(long id,Node item)
         {
             var node= await GetById(id);
             node.Lat = item.Lat;

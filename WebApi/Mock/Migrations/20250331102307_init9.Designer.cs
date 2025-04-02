@@ -11,8 +11,8 @@ using Mock;
 namespace Mock.Migrations
 {
     [DbContext(typeof(Database))]
-    [Migration("20250324144048_init2")]
-    partial class init2
+    [Migration("20250331102307_init9")]
+    partial class init9
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -55,10 +55,6 @@ namespace Mock.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Password")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -83,8 +79,9 @@ namespace Mock.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
-                    b.Property<long>("WayId")
-                        .HasColumnType("bigint");
+                    b.Property<string>("WayId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -97,11 +94,8 @@ namespace Mock.Migrations
 
             modelBuilder.Entity("Repository.Entities.Way", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("HighwayType")
                         .IsRequired()

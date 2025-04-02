@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Service.Services
 {
-    public class WayService : IService<Way>
+    public class WayService : IService<Way,string>
     {
-        private readonly IRepository<Way> _repository;
-        public WayService(IRepository<Way> _repository)
+        private readonly IRepository<Way, string> _repository;
+        public WayService(IRepository<Way, string> _repository)
         {
             this._repository = _repository;
         }
@@ -23,7 +23,7 @@ namespace Service.Services
             return item;
         }
 
-        public async Task<Way> Delete(int id)
+        public async Task<Way> Delete(string id)
         {
             return await _repository.Delete(id);
         }
@@ -33,12 +33,12 @@ namespace Service.Services
             return await _repository.GetAll();
         }
 
-        public async Task<Way> GetById(int id)
+        public async Task<Way> GetById(string id)
         {
             return await _repository.GetById(id);
         }
 
-        public async Task<Way> Update(int id, Way item)
+        public async Task<Way> Update(string id, Way item)
         {
             return await _repository.Update(id,item);
         }

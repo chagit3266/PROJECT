@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    public class UserRepository : IRepository<User>
+    public class UserRepository : IRepository<User,int>
     {
         private readonly IContext _context;
         public UserRepository(IContext _context)
@@ -45,10 +45,9 @@ namespace Repository.Repositories
         public async Task<User> Update(int id,User item)
         {
             var user =await GetById(id);
-            user.UserName = item.UserName;
-            user.Name = item.Name;
             user.Email = item.Email;
             user.Password = item.Password;
+            user.UserName = item.UserName;
             return user;
         }
 

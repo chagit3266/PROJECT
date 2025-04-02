@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    public class WayRepository : IRepository<Way>
+    public class WayRepository : IRepository<Way,string>
     {
         private readonly IContext _context;
         public WayRepository(IContext _context)
@@ -24,7 +24,7 @@ namespace Repository.Repositories
             return item;
         }
 
-        public async Task<Way> Delete(int id)
+        public async Task<Way> Delete(string id)
         {
             var ways = await GetById(id);
             _context.Ways.Remove(ways);
@@ -37,12 +37,12 @@ namespace Repository.Repositories
             return await _context.Ways.ToListAsync();
         }
 
-        public async Task<Way> GetById(int id)
+        public async Task<Way> GetById(string id)
         {
             return await _context.Ways.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<Way> Update(int id,Way item)
+        public async Task<Way> Update(string id,Way item)
         {
             //Point לא צריך לעדכן ישירות נקודות אלא לשלוח לעדכון במחלקת 
             var ways= await GetById(id);

@@ -85,3 +85,9 @@ C:\Users\1\Desktop\PROJECT\WebApi\WebApi\bin\Debug\net8.0\Service.pdb
 C:\Users\1\Desktop\PROJECT\WebApi\WebApi\bin\Debug\net8.0\Repository.pdb
 C:\Users\1\Desktop\PROJECT\WebApi\WebApi\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\1\Desktop\PROJECT\WebApi\WebApi\obj\Debug\net8.0\WebApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\1\Desktop\PROJECT\WebApi\WebApi\bin\Debug\net8.0\Google.Apis.dll
+C:\Users\1\Desktop\PROJECT\WebApi\WebApi\bin\Debug\net8.0\Google.Apis.Auth.dll
+C:\Users\1\Desktop\PROJECT\WebApi\WebApi\bin\Debug\net8.0\Google.Apis.Core.dll
+C:\Users\1\Desktop\PROJECT\WebApi\WebApi\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\1\Desktop\PROJECT\WebApi\WebApi\bin\Debug\net8.0\System.Management.dll
+C:\Users\1\Desktop\PROJECT\WebApi\WebApi\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll

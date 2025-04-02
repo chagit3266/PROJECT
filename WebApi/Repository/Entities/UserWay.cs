@@ -12,7 +12,7 @@ namespace Repository.Entities
     {
         [Key]
         public int Id { get; set; }
-        public long WayId { get; set; }
+        public string WayId { get; set; }
         [ForeignKey("WayId")]
         public virtual Way Way { get; set; }
         public int UserId { get; set; }

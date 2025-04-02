@@ -28,9 +28,12 @@ namespace Service.Interfaces
         //SQLעיבוד מידע שמור ב
         //SQLאם נחתכת עם קשת מ openstreetmap ופיצול קשתות מ
 
+        //אלגוריתם למציאת הנקודה הקרובה ביותר הרישמית
+        public Node FindClosestNode(Node node, List<Node> nodes);
 
-        
-
+        //פונקציה לפירוק קשת ל2
+        public List<Way> SplitWayAtNode(Node node, List<Way> ways);
+        public List<Way> SplitWaysAtIntersections(List<Way> ways);
         // אלגוריתם למציאת מרחק בין 2 נקודות
         // 'ע"מ לבדוק אם צריך לשמור נק
         // Way וכן כדי לחשב אורך 
@@ -46,12 +49,18 @@ namespace Service.Interfaces
         //נבדוק גם בשמורים שאושרו וגם באלו שעדיין לא אושרו ונבדוק אם צריך לשנות לו סטטוס לפעיל
 
         // שמירת נתיב אם לא קיים
-        
+
+        //ID יצירת טבלת גיבוב לצמתים לפי
+        public Dictionary<long, Node> CreateDictionaryByIdNode(List<Node> node);
+        //ID יצירת טבלת גיבוב לדרכים לפי
+        //public Dictionary<long, Way> CreateDictionaryByIdWay(List<Way> way);
+        //Dictionary<long, long> prev מה nodes יצירת רשימת 
+        public List<Node> CreateListNodes(Dictionary<long, List<Way>> ways, Dictionary<long, Node> nodes, Dictionary<long, long> prev, long end, long start);
         //יצירת רשימת סמיכויות
         public Dictionary<long, List<Way>> CreateAdjacencyList(List<Node> nodes, List<Way> ways);
 
         // אלגוריתם דייקסטרה 
-        public Dictionary<long, long?> Dijkstra(Dictionary<long, List<Way>> adjacencyList, long source);
+        public Dictionary<long, long> Dijkstra(Dictionary<long, List<Way>> adjacencyList, long source, Dictionary<long, Node> byIdNode);
         //פונקציה לחישוב מסלול
         public Task<List<Node>> CalculateRoute(Node start,Node end);
     }

@@ -13,29 +13,29 @@ namespace WebApi.Controllers
     public class WayController : ControllerBase
     {
         private readonly IAlgorithem algorithem;
-        private readonly IService<Way> _service;
-        public WayController(IService<Way> service, IAlgorithem algorithem)
+        private readonly IService<Way,string> _service;
+        public WayController(IService<Way,string> service, IAlgorithem algorithem)
         {
             _service = service;
             this.algorithem = algorithem;
         }
         // GET: api/<RouteController>
         [HttpGet]
-        public async Task<List<Way>> Get()
+        public async void Get()
         {
-            string join= await algorithem.GetOsmData(51.5, -0.1,100);
-            return algorithem.ExtractWays(join);
+            
         }
 
         // GET api/<RouteController>/5
         [HttpGet("initialization")]
-        public async Task<List<Node>> Get(double startLat, double startLon, double endLat, double endLon)
+        public async Task<List<Node>> Get([FromQuery] double startLat, [FromQuery] double startLon, [FromQuery] double endLat, [FromQuery] double endLon)
         {
-            return await algorithem.CalculateRoute(new Node { Lat = startLat, Lon = startLon }, new Node { Lat = endLat, Lon = endLon });
+            return await algorithem.CalculateRoute(new Node { Lat = startLat, Lon = startLon }, new Node { Lat = endLat, Lon = endLon });//כי אני צריכה למצוא נקודה הכי קרובה לנקודה שקיבלתי Id אני לא צריכה לשמור
         }
 
         // POST api/<RouteController>
         [HttpPost]
+        //כשמשתמש מתיחיל מסלול חדש לא מוכר
         public void Post()
         {
 
@@ -47,10 +47,10 @@ namespace WebApi.Controllers
         {
 
         }
-
+        //לכאורה לא צריך אלא אם כן כאשר ידווח על מסלול שהוא בלתי חוקי אז הוא ימחק
         // DELETE api/<RouteController>/5
         [HttpDelete("{id}")]
-        public Task<Way> Delete(int id)
+        public Task<Way> Delete(string id)
         {
             return _service.Delete(id);
         }

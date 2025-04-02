@@ -23,9 +23,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: myAllowSpecificOrigin,
         policy =>
         {
-            policy.AllowAnyOrigin()//.WithOrigins("http://localhost:5173/") //Frontend של ה URL וודאי שזה ה
+            policy.AllowAnyOrigin() // הוסף את הכתובת הספציפית
                   .AllowAnyMethod()
                   .AllowAnyHeader();
+                  //.AllowCredentials();  // אפשר שימוש ב-credentials
+
         });
 });
 
@@ -44,6 +46,15 @@ builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
+app.UseCors(myAllowSpecificOrigin);
+
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Add("Cross-Origin-Opener-Policy", "same-origin-allow-popups");
+    await next();
+});
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -53,6 +64,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseRouting();
 
 app.UseAuthorization();
 

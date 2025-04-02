@@ -16,9 +16,9 @@ namespace Service.Services
         public static IServiceCollection AddService(this IServiceCollection service)
         {
             service.AddRepository();
-            service.AddScoped<IService<Node>, NodeService>();
-            service.AddScoped<IService<Way>, WayService>();
-            service.AddScoped<IService<UserWay>, UserRoutesService>();
+            service.AddScoped<IService<Node,long>, NodeService>();
+            service.AddScoped<IService<Way,string>, WayService>();
+            service.AddScoped<IService<UserWay,int>, UserRoutesService>();
             //service.AddScoped<IUserService, UserService>();
             service.AddScoped<IAlgorithem,AlgorithmService>();
             return service;

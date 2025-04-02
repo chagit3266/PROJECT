@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace Service.Services
 {
-    public class NodeService : IService<Node>
+    public class NodeService : IService<Node,long>
     {
-        private readonly IRepository<Node> _repository;
-        public NodeService(IRepository<Node> _repository)
+        private readonly IRepository<Node,long> _repository;
+        public NodeService(IRepository<Node,long> _repository)
         {
             this._repository = _repository;
         }
@@ -22,7 +22,7 @@ namespace Service.Services
             return item;
         }
 
-        public async Task<Node> Delete(int id)
+        public async Task<Node> Delete(long id)
         {
             return await _repository.Delete(id);
         }
@@ -32,12 +32,12 @@ namespace Service.Services
             return await _repository.GetAll();
         }
 
-        public async Task<Node> GetById(int id)
+        public async Task<Node> GetById(long id)
         {
             return await _repository.GetById(id);
         }
 
-        public async Task<Node> Update(int id, Node item)
+        public async Task<Node> Update(long id, Node item)
         {
             return await _repository.Update(id,item);
         }

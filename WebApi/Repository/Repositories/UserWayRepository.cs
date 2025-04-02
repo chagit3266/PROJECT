@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Repositories
 {
-    internal class UserWayRepository : IRepository<UserWay>
+    internal class UserWayRepository : IRepository<UserWay,int>
     {
         private readonly IContext _context;
         public UserWayRepository(IContext _context)

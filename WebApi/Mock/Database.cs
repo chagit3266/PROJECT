@@ -33,7 +33,7 @@ namespace Mock
         {
             //של המחשב עליו אני עובדת SQL צריך לכתוב את ה
             //optionsBuilder.UseSqlServer("server=dc2016\\erasql; database=myshopDb; trusted_connection=true; TrustServerCertificate=True");
-            optionsBuilder.UseSqlServer("server=HPG1023; database=project;User Id=HPG1023\\1; trusted_connection=true; TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("server=HPG1023; database=GoPath;User Id=HPG1023\\1; trusted_connection=true; TrustServerCertificate=True");
         }
     }
 }

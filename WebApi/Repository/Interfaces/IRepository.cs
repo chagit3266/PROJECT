@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Repository.Interfaces
 {
-    public interface IRepository<T>
+    public interface IRepository<T,W>
     {
        //כאן יופיעו הפעולות שרלונטיות לכל המחלקות
        Task<T> Add(T item);
        Task<List<T>> GetAll();
-       Task<T> GetById(int id);
-       Task<T> Delete(int id);
-       Task<T> Update(int id,T item);
+       Task<T> GetById(W id);
+       Task<T> Delete(W id);
+       Task<T> Update(W id,T item);
     }
 }

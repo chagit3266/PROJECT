@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Service.Interfaces
 {
-    public interface IService<T>
+    public interface IService<T,W>
     {
         Task<T> Add(T item);
         Task<List<T>> GetAll();
-        Task<T> GetById(int id);
-        Task<T> Delete(int id);
-        Task<T> Update(int id, T item);
+        Task<T> GetById(W id);
+        Task<T> Delete(W id);
+        Task<T> Update(W id, T item);
     }
 }

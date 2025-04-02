@@ -18,8 +18,8 @@ namespace Service.Services
     public class UserService : IUserService
     {
         private readonly IConfiguration _config;
-        private readonly IRepository<User> _repository;
-        public UserService(IRepository<User> _repository,IConfiguration _config)
+        private readonly IRepository<User, int> _repository;
+        public UserService(IRepository<User, int> _repository,IConfiguration _config)
         {
             this._repository = _repository;
             this._config = _config;
@@ -49,6 +49,11 @@ namespace Service.Services
             var users = await GetAll();
             return users.FirstOrDefault(x => ( x.Password==password && x.Email==email));//אם יפתחו לאותו מייל כמה סיסמאות כל פעם יפתח מחדש
         }
+        public async Task<User> GetByEmail(string email)
+        {
+            var users = await GetAll();
+            return users.FirstOrDefault(x => (x.Email == email));
+        }
         public async Task<User> Update(int id, User item)
         {
             return await _repository.Update(id,item);
@@ -60,8 +65,8 @@ namespace Service.Services
             var credentials=new SigningCredentials(securityKey,SecurityAlgorithms.HmacSha256);
             //אוביקט שמגדירים בו מה מצפינים
             var claims = new[] {
-               new Claim(ClaimTypes.NameIdentifier, user.UserName),
-               new Claim(ClaimTypes.Email, user.Email),
+               new Claim(ClaimTypes.Email, user.Email.ToLower()),
+               new Claim(ClaimTypes.Name,user.UserName)
 
             };
             var token = new JwtSecurityToken(_config["Jwt:Issuer"], _config["Jwt:Audience"],

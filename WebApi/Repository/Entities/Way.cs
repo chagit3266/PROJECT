@@ -11,10 +11,14 @@ namespace Repository.Entities
     public class Way
     {
         [Key]
-        public long Id { get; set; }
+        public string Id { get; set; }
         public List<long> NodeIds { get; set; } = new List<long>();
         public string HighwayType { get; set; }//OSM שדה לסוג הדרך לפי
 
-        
+        public Way()
+        {
+            //GUID יצירת מזהה אוטומטי 
+            Id = Guid.NewGuid().ToString();
+        }
     }
 }
