@@ -102,7 +102,7 @@ namespace Service.Services
             foreach (var way in ways)
             {
                 int splitIndex = -1;
-                if (way.NodeIds.Count!=0)
+                if (way.NodeIds.Count != 0)
                     splitIndex = way.NodeIds.IndexOf(node.Id);
                 if (splitIndex != -1)
                 {
@@ -140,7 +140,7 @@ namespace Service.Services
             // יצירת מבנה נתונים לאיתור צמתים שמופיעים כנקודת התחלה של דרך אחרת
             HashSet<long> keyNodes = new HashSet<long>(
              ways.Select(w => w.NodeIds.First()).Concat(ways.Select(w => w.NodeIds.Last()))
-);
+            );
             foreach (var way in ways)
             {
                 int prev = 0;
@@ -160,14 +160,15 @@ namespace Service.Services
 
                     }
                 }
-                if (prev < way.NodeIds.Count - 1) { 
-                    var way2 = new Way
+                if (prev < way.NodeIds.Count - 1)
                 {
-                    Id = way.Id , // מזהה ייחודי לחלק החדש
-                    NodeIds = way.NodeIds.Skip(prev).ToList(), // מהנקודה והלאה
-                    HighwayType = way.HighwayType
-                };
-                newWays.Add(way2);
+                    var way2 = new Way
+                    {
+                        Id = way.Id, // מזהה ייחודי לחלק החדש
+                        NodeIds = way.NodeIds.Skip(prev).ToList(), // מהנקודה והלאה
+                        HighwayType = way.HighwayType
+                    };
+                    newWays.Add(way2);
                 }
             }
 
@@ -252,8 +253,8 @@ namespace Service.Services
             double d = 0;
             for (int i = 0; i < way.NodeIds.Count - 1; i++)
             {
-                if(nodes.ContainsKey(way.NodeIds[i])&&nodes.ContainsKey(way.NodeIds[i + 1]))
-                   d += CalculateDistance(nodes[way.NodeIds[i]], nodes[way.NodeIds[i + 1]]);
+                if (nodes.ContainsKey(way.NodeIds[i]) && nodes.ContainsKey(way.NodeIds[i + 1]))
+                    d += CalculateDistance(nodes[way.NodeIds[i]], nodes[way.NodeIds[i + 1]]);
             }
             return d;
         }
@@ -318,8 +319,8 @@ namespace Service.Services
                 //או להפך prev[current]ונגמרת ב currentאני צריכה לגשת לקשת שמתחילה ב
                 //ways איך שולחים את  
                 //prev נשלח רשימת סמיכויות וכך נוכל לחזור ל
-                if (true)//אם השתמשתי הפוך אז להפוך
-                    way.Reverse();
+                //אם השתמשתי הפוך אז להפוך
+
                 Way temp = adjacencyList[prev[current]].
                     FirstOrDefault(item =>
                     (item.NodeIds[0] == prev[current] &&
@@ -327,11 +328,11 @@ namespace Service.Services
                     (item.NodeIds[0] == current &&
                     item.NodeIds[item.NodeIds.Count - 1] == prev[current]));
                 if (temp.NodeIds[0] == current && temp.NodeIds[temp.NodeIds.Count - 1] == prev[current])
-                {    
+                {
                     foreach (var nodeId in temp.NodeIds)
                     {
-                    way.Add(nodes[nodeId]);
-                     }
+                        way.Add(nodes[nodeId]);
+                    }
                 }
                 else
                 {
@@ -456,8 +457,8 @@ namespace Service.Services
         public async Task<List<Node>> CalculateRoute(Node start, Node end)
         {
 
-            var mid =MidNode(start, end);//end ל start מציאת נקודת אמצע בין 
-            double dist =CalculateDistance(start, end);//מציאת המרחק בין שתי הנקודות כדי לדעת איזה רדיוס לשלוח לפונקציה
+            var mid = MidNode(start, end);//end ל start מציאת נקודת אמצע בין 
+            double dist = CalculateDistance(start, end);//מציאת המרחק בין שתי הנקודות כדי לדעת איזה רדיוס לשלוח לפונקציה
             string data = await GetOsmData(mid.Lat, mid.Lon, dist * 0.6);//באזור המבוקש waysו nodes עם json מקבל
             List<Node> nodes = ExtractNodes(data);
             List<Way> ways = ExtractWays(data);
@@ -467,8 +468,8 @@ namespace Service.Services
                 return new List<Node>();
             ways = SplitWayAtNode(start, ways);//אם הצומת התחלה היא חלק ממסלול ולא צומת חשובה נרצה לפצל את הדרכים שעוברות בה ל2 דרכים
             ways = SplitWayAtNode(end, ways);//אם הצומת סיום היא חלק ממסלול ולא צומת חשובה נרצה לפצל את הדרכים שעוברות בה ל2 דרכים
-            ways =  SplitWaysAtIntersections(ways);
-            Dictionary<long, List<Way>> adjacencyList =CreateAdjacencyList(nodes, ways);
+            ways = SplitWaysAtIntersections(ways);
+            Dictionary<long, List<Way>> adjacencyList = CreateAdjacencyList(nodes, ways);
             //אם הדרך הקצרה ביותר ארוכה מהיקף חצי מהמעגל
             //נשלח שוב עם רדיוס גדול יותר
             //עדיף להוסיף לרשימת שכניות שכבר נבנתה

@@ -32,10 +32,9 @@
               "RelativeDocumentMoniker": "Service\\Services\\UserService.cs",
               "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Services\\UserService.cs",
               "RelativeToolTip": "Service\\Services\\UserService.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAADwv0IAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAiwE0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-01T20:52:41.359Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-01T20:52:41.359Z"
             },
             {
               "$type": "Document",
@@ -43,9 +42,9 @@
               "Title": "AlgorithmService.cs",
               "DocumentMoniker": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Services\\AlgorithmService.cs",
               "RelativeDocumentMoniker": "Service\\Services\\AlgorithmService.cs",
-              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Services\\AlgorithmService.cs*",
-              "RelativeToolTip": "Service\\Services\\AlgorithmService.cs*",
-              "ViewState": "AgIAAF4BAAAAAAAAAAAAwGwBAAA5AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\Service\\Services\\AlgorithmService.cs",
+              "RelativeToolTip": "Service\\Services\\AlgorithmService.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwHYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-31T13:16:20.235Z",
               "EditorCaption": ""
@@ -58,7 +57,7 @@
               "RelativeDocumentMoniker": "WebApi\\Controllers\\WayController.cs",
               "ToolTip": "C:\\Users\\1\\Desktop\\PROJECT\\WebApi\\WebApi\\Controllers\\WayController.cs",
               "RelativeToolTip": "WebApi\\Controllers\\WayController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAArwB8AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAIA+wB8AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-01T00:14:05.836Z",
               "EditorCaption": ""
